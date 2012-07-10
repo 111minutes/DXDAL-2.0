@@ -22,7 +22,7 @@
         request.URL = [NSURL URLWithString:@"url"];
     };
     
-    [requestBuilder addRequest:req configurationBlock:configBlock];
+    [requestBuilder operationWithRequest:req configurationBlock:configBlock];
     STAssertTrue([req.HTTPMethod isEqualToString:@"POST"],@"should be equal");
     STAssertTrue([req.URL isEqual:[NSURL URLWithString:@"url"]],@"should be equal");
 }

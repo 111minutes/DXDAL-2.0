@@ -15,7 +15,7 @@ typedef void (^NJDXDALRequestConfigurationBlock)(id request);
 @interface NJDXDALRequestBuilder : NSObject
 
 - (void)addDefaultConfig:(NJDXDALRequestConfigurationBlock) configurationBlock;
-- (NJDXDALHTTPOperation*) addRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock;
+- (NJDXDALHTTPOperation*) operationWithRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock;
 - (void)defaultConfig;
 
 @end

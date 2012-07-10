@@ -38,7 +38,7 @@
     
 }
 
-- (NJDXDALHTTPOperation*) addRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock
+- (NJDXDALHTTPOperation*) operationWithRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock
 {
     assert(request != nil);
     for (id block in _configurationBlock) 
