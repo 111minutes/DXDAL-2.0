@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
+		2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */; };
 		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
 		30E195B115AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
 		30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B215AC208B00FA0A5C /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilder.h; sourceTree = "<group>"; };
+		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
+		2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilderTests.h; sourceTree = "<group>"; };
+		2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilderTests.m; sourceTree = "<group>"; };
 		30E195AA15AC208B00FA0A5C /* NJDXDAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJDXDAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E195AE15AC208B00FA0A5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30E195B015AC208B00FA0A5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -94,6 +100,8 @@
 		30E1959F15AC208B00FA0A5C = {
 			isa = PBXGroup;
 			children = (
+				2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */,
+				2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */,
 				30E195F615AC2C3B00FA0A5C /* HTTPOperations */,
 				30E195F515AC2C0F00FA0A5C /* Parsing */,
 				30E195E315AC23A000FA0A5C /* NJDXDALRunLoopController.h */,
@@ -154,6 +162,8 @@
 				30E195D215AC208B00FA0A5C /* NJDXDALTests.h */,
 				30E195D315AC208B00FA0A5C /* NJDXDALTests.m */,
 				30E195CD15AC208B00FA0A5C /* Supporting Files */,
+				2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */,
+				2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */,
 			);
 			path = NJDXDALTests;
 			sourceTree = "<group>";
@@ -302,6 +312,7 @@
 				30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */,
 				30E195F115AC2B8100FA0A5C /* NJDXDALOperationsCenter.m in Sources */,
 				30E195F415AC2BA900FA0A5C /* NJDXDALParsingCenter.m in Sources */,
+				2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +321,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E195D415AC208B00FA0A5C /* NJDXDALTests.m in Sources */,
+				2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +477,7 @@
 				30E195D915AC208B00FA0A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		30E195DA15AC208B00FA0A5C /* Build configuration list for PBXNativeTarget "NJDXDALTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +486,7 @@
 				30E195DC15AC208B00FA0A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

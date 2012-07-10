@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "MainViewController.h"
+#import "NJDXDALRequestBuilder.h"
 
 @implementation AppDelegate
 
