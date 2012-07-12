@@ -10,12 +10,12 @@
 
 @class NJDXDALHTTPOperation;
 
-typedef void (^NJDXDALRequestConfigurationBlock)(id request);
+typedef void (^NJDXDALOperationConfigurationBlock)(id request);
 
 @interface NJDXDALRequestBuilder : NSObject
 
-- (void)addDefaultConfig:(NJDXDALRequestConfigurationBlock) configurationBlock;
-- (NJDXDALHTTPOperation*) operationWithRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock;
+- (void)addDefaultConfig:(NJDXDALOperationConfigurationBlock) configurationBlock;
+- (NJDXDALHTTPOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock;
 - (void)defaultConfig;
 
 @end

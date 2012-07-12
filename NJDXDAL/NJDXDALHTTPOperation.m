@@ -55,6 +55,7 @@
 - (void)start
 {
     // creating connection 
+    _request.HTTPMethod = [_httpMethod copy];
     _connection = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:NO];
     if (_connection) 
     {
