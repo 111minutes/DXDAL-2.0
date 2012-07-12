@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NJDXDALOperation.h"
 
 @class NJDXDALHTTPOperation;
 
@@ -19,17 +20,25 @@
 
 
 
-@interface NJDXDALHTTPOperation : NSOperation <NSURLConnectionDelegate>
+@interface NJDXDALHTTPOperation : NJDXDALOperation <NSURLConnectionDelegate>
 
 @property (nonatomic,strong) NSMutableURLRequest* request;
 @property (nonatomic,readonly) BOOL isExecuting;
 @property (nonatomic,assign) BOOL isFinished; 
 @property (nonatomic,readonly) BOOL isCancelled;
 
--(NJDXDALHTTPOperation*)initWithRequest:(NSURLRequest*)req delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread;
+@property (nonatomic,copy) NSString* httpMethod;
+@property (nonatomic,copy) NSString* httpPath;
+@property (nonatomic,assign)Class entityClass;
+
+//-(void)parser;
+//-(void)mapper;
+
+
+-(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread;
 -(BOOL)isConcurrent;
 -(NSData*)receivedData;
 -(void)start;
-
+-(void)cancel;
 
 @end

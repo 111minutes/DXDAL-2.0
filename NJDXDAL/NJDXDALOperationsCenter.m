@@ -39,9 +39,9 @@
 }
 
 
--(NJDXDALHTTPOperation*)addRequest:(NSURLRequest*)req
+-(NJDXDALHTTPOperation*)addRequest:(NSString*)url
 {
-    NJDXDALHTTPOperation* urlOperation = [[NJDXDALHTTPOperation alloc] initWithRequest:req delegate:self thread:_runLoopManager.thread];
+    NJDXDALHTTPOperation* urlOperation = [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread];
     return urlOperation;
     //[_opQueue addOperation:urlOperation];
 }
@@ -61,7 +61,7 @@
 
 -(void)loadingFinished:(NJDXDALHTTPOperation*)op
 {
-    //NSLog(@"HTTPOperationManager message: Loading data is finished.");
+    //NSLog(@"HTTPOperationsCenter message: Loading data is finished.");
     [_parsingManager addForParsingURLOperation:op];
 }
 

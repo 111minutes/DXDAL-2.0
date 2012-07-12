@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
 		2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */; };
-		30DBD0D215AEB4A400B85415 /* NJDXDALRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D115AEB4A400B85415 /* NJDXDALRequest.m */; };
 		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
+		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
 		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
 		30E195B115AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
 		30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B215AC208B00FA0A5C /* CoreGraphics.framework */; };
@@ -45,10 +45,10 @@
 		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
 		2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilderTests.h; sourceTree = "<group>"; };
 		2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilderTests.m; sourceTree = "<group>"; };
-		30DBD0D015AEB4A400B85415 /* NJDXDALRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequest.h; sourceTree = "<group>"; };
-		30DBD0D115AEB4A400B85415 /* NJDXDALRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequest.m; sourceTree = "<group>"; };
 		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
 		30DBD0D515AEB98300B85415 /* NJDXDALParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParam.m; sourceTree = "<group>"; };
+		30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperation.h; sourceTree = "<group>"; };
+		30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALOperation.m; sourceTree = "<group>"; };
 		30E195AA15AC208B00FA0A5C /* NJDXDAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJDXDAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E195AE15AC208B00FA0A5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		30E195B015AC208B00FA0A5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -103,15 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		30DBD0DF15AEC8FD00B85415 /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */,
+				30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */,
+			);
+			name = Operation;
+			sourceTree = "<group>";
+		};
 		30E1959F15AC208B00FA0A5C = {
 			isa = PBXGroup;
 			children = (
-				30DBD0D415AEB98300B85415 /* NJDXDALParam.h */,
-				30DBD0D515AEB98300B85415 /* NJDXDALParam.m */,
-				30DBD0D015AEB4A400B85415 /* NJDXDALRequest.h */,
-				30DBD0D115AEB4A400B85415 /* NJDXDALRequest.m */,
 				2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */,
 				2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */,
+				30DBD0DF15AEC8FD00B85415 /* Operation */,
 				30E195F615AC2C3B00FA0A5C /* HTTPOperations */,
 				30E195F515AC2C0F00FA0A5C /* Parsing */,
 				30E195E315AC23A000FA0A5C /* NJDXDALRunLoopController.h */,
@@ -201,6 +207,8 @@
 		30E195F615AC2C3B00FA0A5C /* HTTPOperations */ = {
 			isa = PBXGroup;
 			children = (
+				30DBD0D415AEB98300B85415 /* NJDXDALParam.h */,
+				30DBD0D515AEB98300B85415 /* NJDXDALParam.m */,
 				30E195E015AC21F500FA0A5C /* NJDXDALHTTPOperation.h */,
 				30E195E115AC21F500FA0A5C /* NJDXDALHTTPOperation.m */,
 				30E195EF15AC2B8100FA0A5C /* NJDXDALOperationsCenter.h */,
@@ -323,8 +331,8 @@
 				30E195F115AC2B8100FA0A5C /* NJDXDALOperationsCenter.m in Sources */,
 				30E195F415AC2BA900FA0A5C /* NJDXDALParsingCenter.m in Sources */,
 				2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */,
-				30DBD0D215AEB4A400B85415 /* NJDXDALRequest.m in Sources */,
 				30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */,
+				30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

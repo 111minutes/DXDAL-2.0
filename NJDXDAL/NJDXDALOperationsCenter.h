@@ -15,7 +15,7 @@
 @property (nonatomic, strong) NJDXDALRunLoopController* runLoopManager;
 @property (nonatomic, strong) NJDXDALParsingCenter* parsingManager;
 
--(NJDXDALHTTPOperation*)addRequest:(NSURLRequest*)req;
+-(NJDXDALHTTPOperation*)addRequest:(NSString*)url;
 -(void)cancelRequest:(NSURLRequest*)req;
 
 @end

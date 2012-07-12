@@ -7,12 +7,14 @@
 //
 
 #import "NJDXDALHTTPOperation.h"
+#import "NJDXDALParam.h"
 
 @interface NJDXDALHTTPOperation ()
 {
     NSURLConnection* _connection;
     NSMutableData *_receivedData;
     NSThread* _thread;
+    NSMutableArray* _params;
 }
 
 @property (nonatomic,readonly) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
@@ -24,14 +26,16 @@
 
 @synthesize delegate, request = _request;
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
+@synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass;
 
 
--(NJDXDALHTTPOperation*)initWithRequest:(NSURLRequest*)req delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread
+-(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread
 {
     self = [super init];
     if(self)
     {
-        _request = req;
+        //_request = (NSMutableURLRequest*)req;
+        _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         _thread = aThread;
         delegate = aDelegate;
     }
@@ -57,6 +61,23 @@
         NSLog(@"Connecting...");
         _isExecuting = YES;
         _receivedData = [NSMutableData data];
+        
+        //adding params
+        NSMutableString* paramString = [NSMutableString new];
+        for(int i = 0; i < [_params count]; i++)
+        {
+            if(i == 0)
+            {
+                [paramString stringByAppendingString:[NSString stringWithFormat:@"%@", [[_params objectAtIndex:i] toString]]];
+            }
+            else 
+            {
+                [paramString stringByAppendingString:[NSString stringWithFormat:@"&%@", [[_params objectAtIndex:i] toString]]];
+            }
+        }
+        [_request setHTTPBody: [paramString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+        
         // start loading
         [_connection performSelector:@selector(start) onThread:_thread withObject:nil waitUntilDone:NO];
     } 
@@ -74,6 +95,12 @@
     _isExecuting = NO;
     _isCancelled = YES;
     _connection = nil;
+}
+
+-(void)addParam:(NSString*)key value:(NSString*)aValue
+{
+    NJDXDALParam* param = [[NJDXDALParam alloc] initWithKey:key value:aValue];
+    [_params addObject: param];
 }
 
 

@@ -57,12 +57,12 @@
 {
     //    _lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://flapps.ru/example/user-info.php"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
     
-    _lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
+    //_lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
     
     //_lastRequest.HTTPMethod = @"GET";
     //_lastRequest.HTTPBody
     
-    NJDXDALHTTPOperation* op = [_httpOpManager addRequest:_lastRequest];
+    NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
     [op start];
 }
 
