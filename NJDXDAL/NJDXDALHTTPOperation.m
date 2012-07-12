@@ -25,6 +25,7 @@
 @synthesize delegate, request = _request;
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 
+
 -(NJDXDALHTTPOperation*)initWithRequest:(NSURLRequest*)req delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread
 {
     self = [super init];
@@ -74,7 +75,6 @@
     _isCancelled = YES;
     _connection = nil;
 }
-
 
 
 // ------- NSURLConnectionDelegate -------

@@ -21,7 +21,7 @@
 
 @interface NJDXDALHTTPOperation : NSOperation <NSURLConnectionDelegate>
 
-@property (nonatomic,readonly) NSURLRequest* request;
+@property (nonatomic,strong) NSMutableURLRequest* request;
 @property (nonatomic,readonly) BOOL isExecuting;
 @property (nonatomic,assign) BOOL isFinished; 
 @property (nonatomic,readonly) BOOL isCancelled;
