@@ -16,6 +16,7 @@
  //   HTTPOperationsManager* _httpOpManager;
     NJDXDALOperationsCenter* _httpOpManager;
     NSMutableURLRequest* _lastRequest;
+    NJDXDALOperation *_operation;
 }
 @end
 
@@ -60,27 +61,38 @@
     
     //_lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
     
-    //_lastRequest.HTTPMethod = @"GET";
-    //_lastRequest.HTTPBody
     
     //NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
 
-   // [op start];
     NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
     NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
     {
-        operation.httpMethod = @"POST";
+        operation.httpMethod = @"GET";
+     //   operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD";
+        operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3";
+        [operation addParam:@"oauth_token" value:@"XXX"];
+        [operation addParam:@"v" value:@"YYYYMMDD"];
     };
+//    2012-07-12 13:25:22.427 NJDXDAL[5959:f803] Connecting...
+//    2012-07-12 13:25:34.044 NJDXDAL[5959:13103] {"meta":{"code":401,"errorType":"invalid_auth","errorDetail":"OAuth token invalid or revoked."},"response":{}}
+    
+    
+//    2012-07-12 13:27:18.974 NJDXDAL[6084:f803] Connecting...
+//    2012-07-12 13:27:20.456 NJDXDAL[6084:13103] {"meta":{"code":400,"errorType":"invalid_auth","errorDetail":"Missing access credentials. See https:\/\/developer.foursquare.com\/docs\/oauth.html for details."},"response":{}}
 
-    NJDXDALOperation *operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD" configurationBlock:configBlock];
-    [operation start];
+
+
+    _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock];
+    [_operation start];
+    
 
 }
 
 -(void)cancelPressed
 {
     NSLog(@"Canceling...");
-    [_httpOpManager cancelRequest:_lastRequest];
+    //[_httpOpManager cancelOperation:_operation];
+    [_operation cancel];
 }
 
 - (void)viewDidUnload

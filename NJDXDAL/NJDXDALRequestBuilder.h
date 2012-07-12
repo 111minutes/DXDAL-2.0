@@ -8,14 +8,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class NJDXDALOperationsCenter;
+
 @class NJDXDALHTTPOperation;
 
 typedef void (^NJDXDALOperationConfigurationBlock)(id request);
 
 @interface NJDXDALRequestBuilder : NSObject
 
+@property (nonatomic,strong) NJDXDALOperationsCenter *operationsCenter;
+
 - (void)addDefaultConfig:(NJDXDALOperationConfigurationBlock) configurationBlock;
 - (NJDXDALHTTPOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock;
-- (void)defaultConfig;
+- (Class)defaultRequestClass;
 
 @end

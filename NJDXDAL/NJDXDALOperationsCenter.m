@@ -41,17 +41,15 @@
 
 -(NJDXDALHTTPOperation*)addRequest:(NSString*)url
 {
-    NJDXDALHTTPOperation* urlOperation = [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread];
-    return urlOperation;
-    //[_opQueue addOperation:urlOperation];
+    return [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread];
 }
 
--(void)cancelRequest:(NSURLRequest*)req
+-(void)cancelOperation:(NJDXDALOperation*)operation
 {
     NSArray* operations = [_opQueue operations];
     for(NJDXDALHTTPOperation* op in operations)
     {
-        if([op.request isEqual:req])
+        if([op isEqual:operation])
         {
             [op cancel];
             [_parsingManager cancellOperationWithParent:op]; // cancelling parsing operation

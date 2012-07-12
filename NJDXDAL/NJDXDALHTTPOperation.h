@@ -13,12 +13,11 @@
 
 @protocol NJDXDALHTTPOperationDelegate <NSObject>
 
--(void)startOperation:(NJDXDALHTTPOperation*)op;
--(void)loadingFinished:(NJDXDALHTTPOperation*)op;
+-(void)startOperation:(NJDXDALOperation*)op;
+-(void)loadingFinished:(NJDXDALOperation*)op;
+-(void)cancelOperation:(NJDXDALOperation*)op;
 
 @end
-
-
 
 @interface NJDXDALHTTPOperation : NJDXDALOperation <NSURLConnectionDelegate>
 
@@ -29,7 +28,9 @@
 
 @property (nonatomic,copy) NSString* httpMethod;
 @property (nonatomic,copy) NSString* httpPath;
+@property (nonatomic,copy) NSString* httpContentType;
 @property (nonatomic,assign)Class entityClass;
+
 
 //-(void)parser;
 //-(void)mapper;
@@ -40,5 +41,6 @@
 -(NSData*)receivedData;
 -(void)start;
 -(void)cancel;
+-(void)addParam:(NSString*)key value:(NSString*)aValue;
 
 @end

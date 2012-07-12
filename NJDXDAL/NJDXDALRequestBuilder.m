@@ -11,12 +11,6 @@
 #import "NJDXDALOperation.h"
 #import "NJDXDALHTTPOperation.h"
 
-@interface NJDXDALRequestBuilder ()
-
-@property (nonatomic,strong) NJDXDALOperationsCenter *operationsCenter;
-
-@end
-
 @implementation NJDXDALRequestBuilder
 {
     NSMutableArray *_configurationBlock;
@@ -33,11 +27,6 @@
         _configurationBlock = [NSMutableArray array];
     }
     return self;
-}
-
-- (void)defaultConfig
-{
-    
 }
 
 - (NJDXDALOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock
@@ -59,6 +48,12 @@
 - (void)addDefaultConfig:(NJDXDALOperationConfigurationBlock) configurationBlock
 {
     [_configurationBlock addObject:configurationBlock];
+}
+
+- (Class)defaultRequestClass
+{
+  //  NSAssert(NO, @"Override this method in subclasses!");
+    return nil;
 }
 
 @end

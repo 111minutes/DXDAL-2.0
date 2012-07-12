@@ -10,12 +10,14 @@
 #import "NJDXDALRunLoopController.h"
 #import "NJDXDALParsingCenter.h"
 
+@class NJDXDALOperation;
+
 @interface NJDXDALOperationsCenter : NSObject
 
 @property (nonatomic, strong) NJDXDALRunLoopController* runLoopManager;
 @property (nonatomic, strong) NJDXDALParsingCenter* parsingManager;
 
 -(NJDXDALHTTPOperation*)addRequest:(NSString*)url;
--(void)cancelRequest:(NSURLRequest*)req;
+-(void)cancelOperation:(NJDXDALOperation*)operation;
 
 @end
