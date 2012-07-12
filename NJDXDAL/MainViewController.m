@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "NJDXDALHTTPOperation.h"
 #import "NJDXDALOperationsCenter.h"
+#import "NJDXDALRequestBuilder.h"
 
 @interface MainViewController ()
 {
@@ -62,8 +63,18 @@
     //_lastRequest.HTTPMethod = @"GET";
     //_lastRequest.HTTPBody
     
-    NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
-    [op start];
+    //NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
+
+   // [op start];
+    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
+    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
+    {
+        operation.httpMethod = @"POST";
+    };
+
+    NJDXDALOperation *operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD" configurationBlock:configBlock];
+    [operation start];
+
 }
 
 -(void)cancelPressed

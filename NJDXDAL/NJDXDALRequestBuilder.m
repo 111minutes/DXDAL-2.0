@@ -8,6 +8,8 @@
 
 #import "NJDXDALRequestBuilder.h"
 #import "NJDXDALOperationsCenter.h"
+#import "NJDXDALOperation.h"
+#import "NJDXDALHTTPOperation.h"
 
 @interface NJDXDALRequestBuilder ()
 
@@ -38,22 +40,23 @@
     
 }
 
-- (NJDXDALHTTPOperation*) operationWithRequest:(NSURLRequest*) request configurationBlock:(NJDXDALRequestConfigurationBlock) configBlock
+- (NJDXDALOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock
 {
-    assert(request != nil);
+    assert(url != nil);
+    NJDXDALHTTPOperation *operation = [_operationsCenter addRequest:url];
     for (id block in _configurationBlock) 
     {
-        NJDXDALRequestConfigurationBlock config = block;
-        config(request);
+        NJDXDALOperationConfigurationBlock config = block;
+        config(operation);
     }
     if (configBlock != nil) 
     {
-        configBlock(request);
+        configBlock(operation);
     }
-    return [_operationsCenter addRequest:request];
+    return (NJDXDALOperation*)operation;
 }
 
-- (void)addDefaultConfig:(NJDXDALRequestConfigurationBlock) configurationBlock
+- (void)addDefaultConfig:(NJDXDALOperationConfigurationBlock) configurationBlock
 {
     [_configurationBlock addObject:configurationBlock];
 }

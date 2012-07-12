@@ -8,23 +8,27 @@
 
 #import "NJDXDALRequestBuilderTests.h"
 #import "NJDXDALRequestBuilder.h"
+#import "NJDXDALHTTPOperation.h"
 
 @implementation NJDXDALRequestBuilderTests
-
-- (void)testRequestBuilderBlock
 {
-    NJDXDALRequestBuilder *requestBuilder = [[NJDXDALRequestBuilder alloc] init];
-    
-    NSMutableURLRequest *req = [NSMutableURLRequest new];
-    NJDXDALRequestConfigurationBlock configBlock = ^(NSMutableURLRequest *request)
+    NJDXDALRequestBuilder *_requestBuilder;
+}
+
+- (void)setUp
+{
+    _requestBuilder = [NJDXDALRequestBuilder new];
+    [super setUp];
+}
+
+- (void)testAddedConfigBlock
+{
+    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
     {
-        request.HTTPMethod = @"POST";
-        request.URL = [NSURL URLWithString:@"url"];
+        operation.httpMethod = @"POST";
     };
-    
-    [requestBuilder operationWithRequest:req configurationBlock:configBlock];
-    STAssertTrue([req.HTTPMethod isEqualToString:@"POST"],@"should be equal");
-    STAssertTrue([req.URL isEqual:[NSURL URLWithString:@"url"]],@"should be equal");
+    NJDXDALOperation *operation = [_requestBuilder operationWithUrl:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD" configurationBlock:configBlock];
+    [operation start];
 }
 
 @end
