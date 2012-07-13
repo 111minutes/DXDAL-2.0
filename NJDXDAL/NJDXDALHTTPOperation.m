@@ -60,7 +60,7 @@
     _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,_httpPath]];                    
     //adding params
     NSMutableString* paramString = [NSMutableString stringWithFormat:@""];
-    if ([_request.HTTPMethod isEqualToString:@"POST"]) 
+    if ([_request.HTTPMethod isEqualToString:@"POST"] || [_request.HTTPMethod isEqualToString:@"PUT"]) 
     {            
         for(int i = 0; i < [_params count]; i++)
         {
@@ -77,7 +77,7 @@
         [_request setValue:_httpContentType forHTTPHeaderField:@"Content-Type"];
         [_request setValue:[NSString stringWithFormat:@"%d",[paramString length]] forHTTPHeaderField:@"Content-Length"];
     }
-    else if([_request.HTTPMethod isEqualToString:@"GET"]) 
+    else if([_request.HTTPMethod isEqualToString:@"GET"] || [_request.HTTPMethod isEqualToString:@"DELETE"]) 
     {
         for(int i = 0; i < [_params count]; i++)
         {
@@ -92,14 +92,6 @@
         }
         absoluteString = _request.URL.absoluteString;
         _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,paramString]];
-    }
-    else if ([_request.HTTPMethod isEqualToString:@"PUT"]) 
-    {
-        
-    }
-    else if ([_request.HTTPMethod isEqualToString:@"DELETE"]) 
-    {
-        
     }
     _connection = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:NO];
     if (_connection) 
