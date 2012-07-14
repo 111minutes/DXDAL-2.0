@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>by</key>
+	<string>bies</string>
+	<key>ch</key>
+	<string>ches</string>
+	<key>cy</key>
+	<string>cies</string>
+	<key>dy</key>
+	<string>dies</string>
+	<key>fy</key>
+	<string>fies</string>
+	<key>gy</key>
+	<string>gies</string>
+	<key>hy</key>
+	<string>hies</string>
+	<key>jy</key>
+	<string>jies</string>
+	<key>ky</key>
+	<string>kies</string>
+	<key>ly</key>
+	<string>lies</string>
+	<key>my</key>
+	<string>mies</string>
+	<key>ny</key>
+	<string>nies</string>
+	<key>py</key>
+	<string>pies</string>
+	<key>quy</key>
+	<string>quies</string>
+	<key>qy</key>
+	<string>qies</string>
+	<key>ry</key>
+	<string>ries</string>
+	<key>s</key>
+	<string>ses</string>
+	<key>sh</key>
+	<string>shes</string>
+	<key>ss</key>
+	<string>sses</string>
+	<key>sy</key>
+	<string>sies</string>
+	<key>ty</key>
+	<string>ties</string>
+	<key>vy</key>
+	<string>vies</string>
+	<key>wy</key>
+	<string>wies</string>
+	<key>xy</key>
+	<string>xies</string>
+	<key>zy</key>
+	<string>zies</string>
+</dict>
+</plist>

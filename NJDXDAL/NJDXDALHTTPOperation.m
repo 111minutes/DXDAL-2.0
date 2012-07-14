@@ -17,7 +17,7 @@
     NSMutableArray* _params;
 }
 
-@property (nonatomic,readonly) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
+@property (nonatomic, readonly) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
 
 @end
 

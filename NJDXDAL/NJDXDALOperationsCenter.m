@@ -13,6 +13,9 @@
 {
     NSOperationQueue* _opQueue;
 }
+
+-(NJDXDALOperationsCenter*)initWithRunLoopManager:(NJDXDALRunLoopController*)rlm;
+
 @end
 
 
