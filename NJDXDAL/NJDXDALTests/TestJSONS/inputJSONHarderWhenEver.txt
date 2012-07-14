@@ -21,7 +21,7 @@
         
     "foundation_date": "20100223",
     
-    "numberOfArticles" : 
+    "numberOf" : 
         {
             "firstKey" : "firstValue",
             "secondKey" : "secondValue",

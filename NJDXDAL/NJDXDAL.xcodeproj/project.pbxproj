@@ -28,6 +28,10 @@
 		30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195EA15AC267400FA0A5C /* NJDXDALParsingOperation.m */; };
 		30E195F115AC2B8100FA0A5C /* NJDXDALOperationsCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195F015AC2B8100FA0A5C /* NJDXDALOperationsCenter.m */; };
 		30E195F415AC2BA900FA0A5C /* NJDXDALParsingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195F315AC2BA900FA0A5C /* NJDXDALParsingCenter.m */; };
+		D25FD54715B1F92500C7C5F8 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54415B1F92500C7C5F8 /* Article.m */; };
+		D25FD54815B1F92500C7C5F8 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54415B1F92500C7C5F8 /* Article.m */; };
+		D25FD54915B1F92500C7C5F8 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54615B1F92500C7C5F8 /* BookStore.m */; };
+		D25FD54A15B1F92500C7C5F8 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54615B1F92500C7C5F8 /* BookStore.m */; };
 		D2B1001415B1913600354480 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001215B1913600354480 /* inputJSON.txt */; };
 		D2B1001515B1913600354480 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001215B1913600354480 /* inputJSON.txt */; };
 		D2B1001615B1913600354480 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */; };
@@ -39,10 +43,6 @@
 		D2B1002515B1917B00354480 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1002215B1917B00354480 /* NSString+Extensions.m */; };
 		D2B1003515B1923A00354480 /* NJDXDALMappingConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */; };
 		D2B1003615B1923A00354480 /* NJDXDALMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003415B1923A00354480 /* NJDXDALMappingController.m */; };
-		D2B1003C15B1957200354480 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003915B1957200354480 /* Article.m */; };
-		D2B1003D15B1957200354480 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003915B1957200354480 /* Article.m */; };
-		D2B1003E15B1957200354480 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003B15B1957200354480 /* BookStore.m */; };
-		D2B1003F15B1957200354480 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003B15B1957200354480 /* BookStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +92,10 @@
 		30E195F015AC2B8100FA0A5C /* NJDXDALOperationsCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALOperationsCenter.m; sourceTree = "<group>"; };
 		30E195F215AC2BA900FA0A5C /* NJDXDALParsingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParsingCenter.h; sourceTree = "<group>"; };
 		30E195F315AC2BA900FA0A5C /* NJDXDALParsingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParsingCenter.m; sourceTree = "<group>"; };
+		D25FD54315B1F92500C7C5F8 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		D25FD54415B1F92500C7C5F8 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		D25FD54515B1F92500C7C5F8 /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
+		D25FD54615B1F92500C7C5F8 /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
 		D2B1001215B1913600354480 /* inputJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSON.txt; sourceTree = "<group>"; };
 		D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSONHarderWhenEver.txt; sourceTree = "<group>"; };
 		D2B1001815B1914700354480 /* NJDXDALArticleMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALArticleMappingTest.h; sourceTree = "<group>"; };
@@ -106,10 +110,6 @@
 		D2B1003215B1923A00354480 /* NJDXDALMappingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALMappingController.h; sourceTree = "<group>"; };
 		D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALMappingConfigurator.m; sourceTree = "<group>"; };
 		D2B1003415B1923A00354480 /* NJDXDALMappingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALMappingController.m; sourceTree = "<group>"; };
-		D2B1003815B1957200354480 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		D2B1003915B1957200354480 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
-		D2B1003A15B1957200354480 /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
-		D2B1003B15B1957200354480 /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,7 @@
 		30E195CC15AC208B00FA0A5C /* NJDXDALTests */ = {
 			isa = PBXGroup;
 			children = (
-				D2B1003715B1957200354480 /* TestClasses */,
+				D25FD54215B1F92500C7C5F8 /* TestClasses */,
 				D2B1001815B1914700354480 /* NJDXDALArticleMappingTest.h */,
 				D2B1001915B1914700354480 /* NJDXDALBookStoreHardMappingTest.h */,
 				D2B1001A15B1914700354480 /* NJDXDALArticleMappingTest.m */,
@@ -258,6 +258,17 @@
 			name = HTTPOperations;
 			sourceTree = "<group>";
 		};
+		D25FD54215B1F92500C7C5F8 /* TestClasses */ = {
+			isa = PBXGroup;
+			children = (
+				D25FD54315B1F92500C7C5F8 /* Article.h */,
+				D25FD54415B1F92500C7C5F8 /* Article.m */,
+				D25FD54515B1F92500C7C5F8 /* BookStore.h */,
+				D25FD54615B1F92500C7C5F8 /* BookStore.m */,
+			);
+			path = TestClasses;
+			sourceTree = "<group>";
+		};
 		D2B1001115B1913600354480 /* TestJSONS */ = {
 			isa = PBXGroup;
 			children = (
@@ -287,17 +298,6 @@
 				D2B1003415B1923A00354480 /* NJDXDALMappingController.m */,
 			);
 			name = Mapping;
-			sourceTree = "<group>";
-		};
-		D2B1003715B1957200354480 /* TestClasses */ = {
-			isa = PBXGroup;
-			children = (
-				D2B1003815B1957200354480 /* Article.h */,
-				D2B1003915B1957200354480 /* Article.m */,
-				D2B1003A15B1957200354480 /* BookStore.h */,
-				D2B1003B15B1957200354480 /* BookStore.m */,
-			);
-			path = TestClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -425,8 +425,8 @@
 				D2B1002515B1917B00354480 /* NSString+Extensions.m in Sources */,
 				D2B1003515B1923A00354480 /* NJDXDALMappingConfigurator.m in Sources */,
 				D2B1003615B1923A00354480 /* NJDXDALMappingController.m in Sources */,
-				D2B1003C15B1957200354480 /* Article.m in Sources */,
-				D2B1003E15B1957200354480 /* BookStore.m in Sources */,
+				D25FD54715B1F92500C7C5F8 /* Article.m in Sources */,
+				D25FD54915B1F92500C7C5F8 /* BookStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,8 +438,8 @@
 				2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */,
 				D2B1001C15B1914700354480 /* NJDXDALArticleMappingTest.m in Sources */,
 				D2B1001D15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m in Sources */,
-				D2B1003D15B1957200354480 /* Article.m in Sources */,
-				D2B1003F15B1957200354480 /* BookStore.m in Sources */,
+				D25FD54815B1F92500C7C5F8 /* Article.m in Sources */,
+				D25FD54A15B1F92500C7C5F8 /* BookStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -44,15 +44,17 @@
 {
     NSString *jsonPath = [[NSBundle mainBundle] pathForResource:@"inputJSONHarderWhenEver" ofType:@"txt"];
     NSDictionary *parsedData = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:jsonPath] options:kNilOptions error:nil];
+    
     NJDXDALMappingConfigurator *rootConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:[BookStore class]];
     [rootConfigurator setMappingOfProperty:@"catalogue" toType:@"Article"];
     [rootConfigurator setDateFormat:@"yyyyMMdd"];
+    [rootConfigurator setCorrespondenceOfProperty:@"numberOfArticles" toDataField:@"numberOf"];
         
     NJDXDALMappingConfigurator *numberOfArticlesConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:[NSDictionary class]];
     [numberOfArticlesConfigurator setMappingOfProperty:@"thirdKey" toType:@"Article"];
     
     [rootConfigurator setMappingOfProperty:@"numberOfArticles" toMappingConfigurator:numberOfArticlesConfigurator];
-    
+        
     NJDXDALMappingController *mappingController = [[NJDXDALMappingController alloc] initWithContainer:parsedData mappingConfigurator:rootConfigurator];
     NSArray *mappedResult = [mappingController start];
     

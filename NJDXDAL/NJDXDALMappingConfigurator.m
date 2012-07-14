@@ -10,37 +10,49 @@
 
 @implementation NJDXDALMappingConfigurator
 
-@synthesize mappingConfig = _mappingConfig;
+@synthesize mappingClassConfiguration = _mappingClassConfiguration;
 @synthesize mappingClass = _mappingClass;
+@synthesize mappingCorrespondence = _mappingCorrespondence;
 
 - (id)initForClass:(Class)mappingClass 
 {
     self= [super init];
     if (self) {
-        _mappingConfig = [NSMutableDictionary new];
+        _mappingClassConfiguration = [NSMutableDictionary new];
         _mappingClass = mappingClass;
+        _mappingCorrespondence = [NSMutableDictionary new];
     }
     return self;
 }
 
 - (void)setMappingOfProperty:(NSString *)propertyName toType:(NSString *)propertyType 
 {
-    [_mappingConfig setValue:propertyType forKey:propertyName];    
+    [_mappingClassConfiguration setValue:propertyType forKey:propertyName];    
 }
 
 - (void)setMappingOfProperty:(NSString *)propertyName toMappingConfigurator:(NJDXDALMappingConfigurator *)configurator 
 {
-    [_mappingConfig setValue:configurator forKey:propertyName];
+    [_mappingClassConfiguration setValue:configurator forKey:propertyName];
 }
 
-- (void)setDateStyle:(NSInteger)formatterDateStyle {
-    [_mappingConfig setValue:[NSNumber numberWithInt:formatterDateStyle] forKey:@"FormatterDateStyle"];
+- (void)setDateStyle:(NSInteger)formatterDateStyle 
+{
+    [_mappingClassConfiguration setValue:[NSNumber numberWithInt:formatterDateStyle] forKey:@"FormatterDateStyle"];
 }
-- (void)setTimeStyle:(NSInteger)formatterTimeStyle {
-    [_mappingConfig setValue:[NSNumber numberWithInt:formatterTimeStyle] forKey:@"FormatterTimeStyle"]; 
+
+- (void)setTimeStyle:(NSInteger)formatterTimeStyle 
+{
+    [_mappingClassConfiguration setValue:[NSNumber numberWithInt:formatterTimeStyle] forKey:@"FormatterTimeStyle"]; 
 }
-- (void)setDateFormat:(NSString *)dateFormat {
-    [_mappingConfig setValue:dateFormat forKey:@"CustomDateFormat"];
+
+- (void)setDateFormat:(NSString *)dateFormat 
+{
+    [_mappingClassConfiguration setValue:dateFormat forKey:@"CustomDateFormat"];
+}
+
+- (void)setCorrespondenceOfProperty:(NSString *)propertyName toDataField:(NSString *)dataField 
+{
+    [_mappingCorrespondence setValue:dataField forKey:propertyName];
 }
 
 @end

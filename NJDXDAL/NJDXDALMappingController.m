@@ -15,8 +15,9 @@
     id _container;
     Class _mappingClass;
     NSDictionary *_classProperties;
-    NSDictionary *_mappingConfig;
-    objc_property_t *_objcClassProperties;    
+    NSDictionary *_mappingClassesConfiguration;
+    NSDictionary *_mappingPropertiesCorrespondence;
+    objc_property_t *_objcClassProperties;   
 }
 
 - (NSArray *)makeObjectsFromContainer:(id)container;
@@ -43,7 +44,9 @@
             _mappingClass = mappingConfigurator.mappingClass;
         }
         _classProperties = [self getPropertiesOfClass:_mappingClass];
-        _mappingConfig = mappingConfigurator.mappingConfig;
+        _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
+        _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
+        
     }
     return self;
 }
@@ -75,7 +78,6 @@
     return objectsArray;
 }
 
-
 - (NSDictionary *)getPropertiesOfClass:(Class)class 
 {
     NSMutableDictionary *propertiesDictionary = [NSMutableDictionary new];
@@ -98,21 +100,25 @@
     return propertiesDictionary;
 }
 
-
 - (id)getObjectWithClass:(Class)class fromDictionary:(NSDictionary *)dictionary 
 {
     id object = [[_mappingClass alloc] init];
+    id propertyValue;
     for (NSString *property in [_classProperties allKeys]) {
-        
-        NSSet *propertyNames = [self getSetOfPossibleNames:property];
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self IN %@", propertyNames];
-        NSArray *filteredPropertyKeys = [[dictionary allKeys] filteredArrayUsingPredicate:predicate];
-        id propertyValue;
-        if ([filteredPropertyKeys count] == 0) {
-            propertyValue = nil;
+        if ([_mappingPropertiesCorrespondence valueForKey:property] != NULL) {
+            propertyValue = [dictionary valueForKey:[_mappingPropertiesCorrespondence valueForKey:property]];
         }
         else {
-            propertyValue = [dictionary valueForKey:[filteredPropertyKeys objectAtIndex:0]];
+            NSSet *propertyNames = [self getSetOfPossibleNames:property];
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"self IN %@", propertyNames];
+            NSArray *filteredPropertyKeys = [[dictionary allKeys] filteredArrayUsingPredicate:predicate];
+            
+            if ([filteredPropertyKeys count] == 0) {
+                propertyValue = nil;
+            }
+            else {
+                propertyValue = [dictionary valueForKey:[filteredPropertyKeys objectAtIndex:0]];
+            }
         }
         @try {
             [self setValue:propertyValue forProperty:property ofObject:object];
@@ -128,15 +134,15 @@
 
 - (void)setValue:(id)propertyValue forProperty:(NSString *)propertyName ofObject:(id)object 
 {
-    if ([_mappingConfig valueForKey:propertyName] != NULL) {
+    if ([_mappingClassesConfiguration valueForKey:propertyName] != NULL) {
         NJDXDALMappingConfigurator *newMappingConfigurator;
-        if ([[_mappingConfig valueForKey:propertyName] isMemberOfClass:[NJDXDALMappingConfigurator class]]) {
+        if ([[_mappingClassesConfiguration valueForKey:propertyName] isMemberOfClass:[NJDXDALMappingConfigurator class]]) {
             // if property is custom object
-            newMappingConfigurator = [_mappingConfig valueForKey:propertyName];
+            newMappingConfigurator = [_mappingClassesConfiguration valueForKey:propertyName];
         }
         else {
             // if property is built-in object
-            newMappingConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:NSClassFromString([_mappingConfig valueForKey:propertyName])];
+            newMappingConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:NSClassFromString([_mappingClassesConfiguration valueForKey:propertyName])];
         }
         NJDXDALMappingController *newMappingController = [[NJDXDALMappingController alloc] initWithContainer:propertyValue mappingConfigurator:newMappingConfigurator];
         NSArray *results = [newMappingController start];
@@ -175,17 +181,17 @@
 - (id)formatDateFrom:(NSString *)dateString 
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    if ([_mappingConfig valueForKey:@"CustomDateFormat"] != NULL) {
-        [formatter setDateFormat:[_mappingConfig valueForKey:@"CustomDateFormat"]];
+    if ([_mappingClassesConfiguration valueForKey:@"CustomDateFormat"] != NULL) {
+        [formatter setDateFormat:[_mappingClassesConfiguration valueForKey:@"CustomDateFormat"]];
     }
     else {
         int timeFormatter = NSDateFormatterMediumStyle;
         int dateFormatter = NSDateFormatterMediumStyle;
-        if ([_mappingConfig valueForKey:@"FormatterTimeStyle"] != NULL) {
-            timeFormatter = [[_mappingConfig valueForKey:@"FormatterTimeStyle"] intValue];
+        if ([_mappingClassesConfiguration valueForKey:@"FormatterTimeStyle"] != NULL) {
+            timeFormatter = [[_mappingClassesConfiguration valueForKey:@"FormatterTimeStyle"] intValue];
         }
-        if ([_mappingConfig valueForKey:@"FormatterDateStyle"] != NULL) {
-            dateFormatter = [[_mappingConfig valueForKey:@"FormatterDateStyle"] intValue];
+        if ([_mappingClassesConfiguration valueForKey:@"FormatterDateStyle"] != NULL) {
+            dateFormatter = [[_mappingClassesConfiguration valueForKey:@"FormatterDateStyle"] intValue];
         }
         
         [formatter setTimeStyle:timeFormatter];
