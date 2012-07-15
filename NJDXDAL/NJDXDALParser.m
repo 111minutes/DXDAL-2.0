@@ -34,7 +34,7 @@
         NSLog(@"don't recognise data type!");
         return nil;
     }
-    parsedData = [parser parseData:aData];
+    parsedData = [parser parseData:aData];    
     [_delegate didFinishedParsing:parsedData];
     return parsedData;
 }

@@ -23,17 +23,15 @@
 
 @synthesize delegate;
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
-
+@synthesize parsedData = _parsedData;
 
 -(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
 {
     self = [super init];
     if(self)
     {
-        _data = parentOp.receivedData;
-        
-        assert(NO);//set datatype!! _dataType = parentOp.contentType;
-        
+        _data = parentOp.receivedData;        
+        _dataType = parentOp.contentType;
         _parentURLOp = parentOp;
         _parser = aParser;
     }
@@ -54,7 +52,7 @@
 {
     // some parsing work...
     
-    [_parser parseData:_data type:_dataType];
+    _parsedData = [_parser parseData:_data type:_dataType];
     [delegate didFinishParsing:self];
 }
 

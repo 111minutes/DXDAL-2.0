@@ -16,10 +16,6 @@
     NSThread* _thread;
     NSMutableArray* _params;
 }
-
-@property (nonatomic, strong) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
-@property (nonatomic, strong) NSString *contentType;
-
 @end
 
 
@@ -29,6 +25,9 @@
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 @synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass, httpContentType = _httpContentType;
 @synthesize contentType = _contentType;
+@synthesize parser = _parser;
+@synthesize mapper = _mapper;
+@synthesize result = _result;
 
 
 -(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType
@@ -36,11 +35,10 @@
     self = [super init];
     if(self)
     {
-        //_request = (NSMutableURLRequest*)req;
         _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         _thread = aThread;
         delegate = aDelegate;
-        _contentType = _contentType;
+        _contentType = aContentType;
     }
     return self;
 }
@@ -164,6 +162,23 @@
     // send to delegate that we've finished
     _isExecuting = NO;
     [delegate loadingFinished:self];
+}
+
+#pragma mark -
+#pragma mark MappingDelegate
+
+- (void)didFinishMapping:(NSArray *)realObjects withErrorLog:(NSArray *)mappingErrorArray
+{
+    if ([mappingErrorArray count] == 0) 
+    {
+        _result = realObjects;
+    }
+    NSLog(@"\n\n%@\n\n",_result);
+}
+
+- (void)didCrashedParsing:(NSError *)parsingError
+{
+    
 }
 
 @end

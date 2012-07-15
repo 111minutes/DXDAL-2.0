@@ -10,6 +10,10 @@
 #import "NJDXDALHTTPOperation.h"
 #import "NJDXDALOperationsCenter.h"
 #import "NJDXDALRequestBuilder.h"
+#import "NJDXDALMappingController.h"
+#import "NJDXDALMappingConfigurator.h"
+#import "NJDXDALParser.h"
+#import "Meta.h"
 
 @interface MainViewController ()
 {
@@ -72,18 +76,18 @@
         operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3";
         [operation addParam:@"oauth_token" value:@"XXX"];
         [operation addParam:@"v" value:@"YYYYMMDD"];
+                
+        NJDXDALMappingConfigurator *rootConfig = [[NJDXDALMappingConfigurator alloc] initForClass:[Meta class]];
+        [rootConfig setCorrespondenceOfProperty:@"metaCode" toDataField:@"meta"];
+        NJDXDALMappingController *mapper = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:rootConfig keyPath:@"meta"];
+        operation.parser.delegate = mapper;
+        mapper.delegate = operation;
+        operation.mapper = mapper;
+        
     };
-//    2012-07-12 13:25:22.427 NJDXDAL[5959:f803] Connecting...
-//    2012-07-12 13:25:34.044 NJDXDAL[5959:13103] {"meta":{"code":401,"errorType":"invalid_auth","errorDetail":"OAuth token invalid or revoked."},"response":{}}
-    
-    
-//    2012-07-12 13:27:18.974 NJDXDAL[6084:f803] Connecting...
-//    2012-07-12 13:27:20.456 NJDXDAL[6084:13103] {"meta":{"code":400,"errorType":"invalid_auth","errorDetail":"Missing access credentials. See https:\/\/developer.foursquare.com\/docs\/oauth.html for details."},"response":{}}
 
-
-
-//    _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock];
-//    [_operation start];
+    _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock contentType:@"json"];
+    [_operation start];
     
 
 }
