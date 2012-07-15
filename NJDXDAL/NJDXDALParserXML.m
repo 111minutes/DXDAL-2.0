@@ -10,12 +10,11 @@
 
 @implementation NJDXDALParserXML
 
-+ (id)parseData:(NSData*) aData;
++ (id)parseData:(NSData*) aData error:(NSError *)anError;
 {
-    NSError *parseError = nil;
-    TBXML *XMLObj = [TBXML tbxmlWithXMLData:aData error:&parseError];
-    if (parseError || ![XMLObj rootXMLElement]) {
-        NSLog(@"XML parse error! \n%@", parseError);
+    TBXML *XMLObj = [TBXML tbxmlWithXMLData:aData error:&anError];
+    if (anError || ![XMLObj rootXMLElement]) {
+        NSLog(@"NJDXDALParserXML: parse error! \n%@", anError);
         return nil;
     }
     else {

@@ -19,6 +19,6 @@
 
 @property (nonatomic, strong) id<SmartParserDelegate> delegate;
 
-- (id)parseData:(NSData *)aData type:(NSString *)aType;
+- (void)parseData:(NSData *)aData type:(NSString *)aType;
 
 @end

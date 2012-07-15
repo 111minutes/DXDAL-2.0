@@ -11,7 +11,7 @@
 @protocol NJDXDALParserProtocol <NSObject>
 
 + (BOOL)isDataTypeAcceptable:(NSString *)type;
-+ (id)parseData:(NSData *) aData;
++ (id)parseData:(NSData *)aData error:(NSError *)anError;
 
 
 @end

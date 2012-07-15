@@ -10,25 +10,25 @@
 
 @implementation NJDXDALParserJSON
 
-+ (id)parseData:(NSData*) aData;
++ (id)parseData:(NSData *) aData error:(NSError *)anError;
 {
-    NSError *serializationError = nil;
     id JSONObj = [NSJSONSerialization JSONObjectWithData:aData 
                                                  options:NSJSONReadingAllowFragments 
-                                                   error:&serializationError]; 
-    if (serializationError==nil && [NSJSONSerialization isValidJSONObject:JSONObj]) {
+                                                   error:&anError]; 
+    if (anError==nil && [NSJSONSerialization isValidJSONObject:JSONObj]) {
         if ([JSONObj isKindOfClass:[NSDictionary class]] ||
             [JSONObj isKindOfClass:[NSArray class]]) {
             return JSONObj;
         } 
         else {
-            NSLog(@"JSON is not array or dictionary!");
+            NSLog(@"NJDXDALParserJSON: JSON is not array or dictionary!");
+            anError = [NSError errorWithDomain:@"JSON is not array or dictionary" code:0 userInfo:nil];
             return nil;
         }
     }
     else {
-        NSLog(@"invalid JSON!");
-        NSLog(@"serialization error: %@", serializationError);
+        NSLog(@"NJDXDALParserJSON: invalid JSON!");
+        NSLog(@"NJDXDALParserJSON: serialization error: %@", anError);
         return nil;
     }
 }
