@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NJDXDALParser.h"
 
 @class NJDXDALParsingOperation;
 @class NJDXDALHTTPOperation;
@@ -26,7 +27,7 @@
 @property (nonatomic,assign) BOOL isFinished; 
 @property (nonatomic,readonly) BOOL isCancelled;
 
--(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp;
+-(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser;
 -(NJDXDALHTTPOperation*)parentURLOperation;
 -(BOOL)isConcurrent;
 -(void)cancel;

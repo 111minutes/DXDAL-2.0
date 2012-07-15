@@ -12,7 +12,9 @@
 @interface NJDXDALParsingOperation ()
 {
     NSData* _data;
+    NSString* _dataType;
     NJDXDALHTTPOperation* _parentURLOp;
+    NJDXDALParser* _parser;
 }
 @end
 
@@ -23,13 +25,17 @@
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 
 
--(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp
+-(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
 {
     self = [super init];
     if(self)
     {
         _data = parentOp.receivedData;
+        
+        assert(NO);//set datatype!! _dataType = parentOp.contentType;
+        
         _parentURLOp = parentOp;
+        _parser = aParser;
     }
     return self;
 }
@@ -47,6 +53,8 @@
 -(void)start
 {
     // some parsing work...
+    
+    [_parser parseData:_data type:_dataType];
     [delegate didFinishParsing:self];
 }
 

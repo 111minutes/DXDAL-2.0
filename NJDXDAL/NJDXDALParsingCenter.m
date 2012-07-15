@@ -9,11 +9,12 @@
 #import "NJDXDALParsingCenter.h"
 #import "NJDXDALHTTPOperation.h"
 #import "NJDXDALParsingOperation.h"
-
+#import "NJDXDALParser.h"
 
 @interface NJDXDALParsingCenter() <NJDXDALParsingOperationDelegate>
 {
     NSOperationQueue* _parsingQueue;
+    NJDXDALParser *_parser;
 }
 @end
 
@@ -26,13 +27,14 @@
     if(self)
     {
         _parsingQueue = [NSOperationQueue new];
+        _parser = [NJDXDALParser new];
     }
     return self;
 }
 
 -(void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op 
 {
-    NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op];
+    NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
     parsingOperation.delegate = self;
     [_parsingQueue addOperation:parsingOperation];
 }
