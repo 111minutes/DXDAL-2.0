@@ -11,5 +11,4 @@
 
 @interface NJDXDALParserJSON : NSObject <NJDXDALParserProtocol>
 
-
 @end
