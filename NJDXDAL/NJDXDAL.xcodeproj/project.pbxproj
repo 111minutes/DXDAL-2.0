@@ -1,616 +1,1891 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
-		2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */; };
-		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
-		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
-		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
-		30E195B115AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
-		30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B215AC208B00FA0A5C /* CoreGraphics.framework */; };
-		30E195B915AC208B00FA0A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30E195B715AC208B00FA0A5C /* InfoPlist.strings */; };
-		30E195BB15AC208B00FA0A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195BA15AC208B00FA0A5C /* main.m */; };
-		30E195BF15AC208B00FA0A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195BE15AC208B00FA0A5C /* AppDelegate.m */; };
-		30E195C715AC208B00FA0A5C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195C615AC208B00FA0A5C /* SenTestingKit.framework */; };
-		30E195C815AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
-		30E195C915AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
-		30E195D115AC208B00FA0A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30E195CF15AC208B00FA0A5C /* InfoPlist.strings */; };
-		30E195D415AC208B00FA0A5C /* NJDXDALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195D315AC208B00FA0A5C /* NJDXDALTests.m */; };
-		30E195DF15AC20CA00FA0A5C /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195DE15AC20CA00FA0A5C /* MainViewController.m */; };
-		30E195E215AC21F500FA0A5C /* NJDXDALHTTPOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195E115AC21F500FA0A5C /* NJDXDALHTTPOperation.m */; };
-		30E195E515AC23A000FA0A5C /* NJDXDALRunLoopController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195E415AC23A000FA0A5C /* NJDXDALRunLoopController.m */; };
-		30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195EA15AC267400FA0A5C /* NJDXDALParsingOperation.m */; };
-		30E195F115AC2B8100FA0A5C /* NJDXDALOperationsCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195F015AC2B8100FA0A5C /* NJDXDALOperationsCenter.m */; };
-		30E195F415AC2BA900FA0A5C /* NJDXDALParsingCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195F315AC2BA900FA0A5C /* NJDXDALParsingCenter.m */; };
-		D25FD54715B1F92500C7C5F8 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54415B1F92500C7C5F8 /* Article.m */; };
-		D25FD54815B1F92500C7C5F8 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54415B1F92500C7C5F8 /* Article.m */; };
-		D25FD54915B1F92500C7C5F8 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54615B1F92500C7C5F8 /* BookStore.m */; };
-		D25FD54A15B1F92500C7C5F8 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = D25FD54615B1F92500C7C5F8 /* BookStore.m */; };
-		D2B1001415B1913600354480 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001215B1913600354480 /* inputJSON.txt */; };
-		D2B1001515B1913600354480 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001215B1913600354480 /* inputJSON.txt */; };
-		D2B1001615B1913600354480 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */; };
-		D2B1001715B1913600354480 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */; };
-		D2B1001C15B1914700354480 /* NJDXDALArticleMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1001A15B1914700354480 /* NJDXDALArticleMappingTest.m */; };
-		D2B1001D15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1001B15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m */; };
-		D2B1002315B1917B00354480 /* irregularNouns.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2B1001F15B1917B00354480 /* irregularNouns.plist */; };
-		D2B1002415B1917B00354480 /* nounsEnds.plist in Resources */ = {isa = PBXBuildFile; fileRef = D2B1002015B1917B00354480 /* nounsEnds.plist */; };
-		D2B1002515B1917B00354480 /* NSString+Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1002215B1917B00354480 /* NSString+Extensions.m */; };
-		D2B1003515B1923A00354480 /* NJDXDALMappingConfigurator.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */; };
-		D2B1003615B1923A00354480 /* NJDXDALMappingController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B1003415B1923A00354480 /* NJDXDALMappingController.m */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		30E195CA15AC208B00FA0A5C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 30E195A115AC208B00FA0A5C /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 30E195A915AC208B00FA0A5C;
-			remoteInfo = NJDXDAL;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilder.h; sourceTree = "<group>"; };
-		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
-		2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilderTests.h; sourceTree = "<group>"; };
-		2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilderTests.m; sourceTree = "<group>"; };
-		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
-		30DBD0D515AEB98300B85415 /* NJDXDALParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParam.m; sourceTree = "<group>"; };
-		30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperation.h; sourceTree = "<group>"; };
-		30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALOperation.m; sourceTree = "<group>"; };
-		30E195AA15AC208B00FA0A5C /* NJDXDAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NJDXDAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		30E195AE15AC208B00FA0A5C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		30E195B015AC208B00FA0A5C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		30E195B215AC208B00FA0A5C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		30E195B615AC208B00FA0A5C /* NJDXDAL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NJDXDAL-Info.plist"; sourceTree = "<group>"; };
-		30E195B815AC208B00FA0A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		30E195BA15AC208B00FA0A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		30E195BC15AC208B00FA0A5C /* NJDXDAL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NJDXDAL-Prefix.pch"; sourceTree = "<group>"; };
-		30E195BD15AC208B00FA0A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		30E195BE15AC208B00FA0A5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		30E195C515AC208B00FA0A5C /* NJDXDALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJDXDALTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		30E195C615AC208B00FA0A5C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		30E195CE15AC208B00FA0A5C /* NJDXDALTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NJDXDALTests-Info.plist"; sourceTree = "<group>"; };
-		30E195D015AC208B00FA0A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		30E195D215AC208B00FA0A5C /* NJDXDALTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NJDXDALTests.h; sourceTree = "<group>"; };
-		30E195D315AC208B00FA0A5C /* NJDXDALTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NJDXDALTests.m; sourceTree = "<group>"; };
-		30E195DD15AC20CA00FA0A5C /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
-		30E195DE15AC20CA00FA0A5C /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
-		30E195E015AC21F500FA0A5C /* NJDXDALHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALHTTPOperation.h; sourceTree = "<group>"; };
-		30E195E115AC21F500FA0A5C /* NJDXDALHTTPOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALHTTPOperation.m; sourceTree = "<group>"; };
-		30E195E315AC23A000FA0A5C /* NJDXDALRunLoopController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRunLoopController.h; sourceTree = "<group>"; };
-		30E195E415AC23A000FA0A5C /* NJDXDALRunLoopController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRunLoopController.m; sourceTree = "<group>"; };
-		30E195E915AC267400FA0A5C /* NJDXDALParsingOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParsingOperation.h; sourceTree = "<group>"; };
-		30E195EA15AC267400FA0A5C /* NJDXDALParsingOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParsingOperation.m; sourceTree = "<group>"; };
-		30E195EF15AC2B8100FA0A5C /* NJDXDALOperationsCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperationsCenter.h; sourceTree = "<group>"; };
-		30E195F015AC2B8100FA0A5C /* NJDXDALOperationsCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALOperationsCenter.m; sourceTree = "<group>"; };
-		30E195F215AC2BA900FA0A5C /* NJDXDALParsingCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParsingCenter.h; sourceTree = "<group>"; };
-		30E195F315AC2BA900FA0A5C /* NJDXDALParsingCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParsingCenter.m; sourceTree = "<group>"; };
-		D25FD54315B1F92500C7C5F8 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		D25FD54415B1F92500C7C5F8 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
-		D25FD54515B1F92500C7C5F8 /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
-		D25FD54615B1F92500C7C5F8 /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
-		D2B1001215B1913600354480 /* inputJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSON.txt; sourceTree = "<group>"; };
-		D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSONHarderWhenEver.txt; sourceTree = "<group>"; };
-		D2B1001815B1914700354480 /* NJDXDALArticleMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALArticleMappingTest.h; sourceTree = "<group>"; };
-		D2B1001915B1914700354480 /* NJDXDALBookStoreHardMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALBookStoreHardMappingTest.h; sourceTree = "<group>"; };
-		D2B1001A15B1914700354480 /* NJDXDALArticleMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALArticleMappingTest.m; sourceTree = "<group>"; };
-		D2B1001B15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALBookStoreHardMappingTest.m; sourceTree = "<group>"; };
-		D2B1001F15B1917B00354480 /* irregularNouns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = irregularNouns.plist; sourceTree = "<group>"; };
-		D2B1002015B1917B00354480 /* nounsEnds.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = nounsEnds.plist; sourceTree = "<group>"; };
-		D2B1002115B1917B00354480 /* NSString+Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Extensions.h"; sourceTree = "<group>"; };
-		D2B1002215B1917B00354480 /* NSString+Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Extensions.m"; sourceTree = "<group>"; };
-		D2B1003115B1923A00354480 /* NJDXDALMappingConfigurator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALMappingConfigurator.h; sourceTree = "<group>"; };
-		D2B1003215B1923A00354480 /* NJDXDALMappingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALMappingController.h; sourceTree = "<group>"; };
-		D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALMappingConfigurator.m; sourceTree = "<group>"; };
-		D2B1003415B1923A00354480 /* NJDXDALMappingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALMappingController.m; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		30E195A715AC208B00FA0A5C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */,
-				30E195B115AC208B00FA0A5C /* Foundation.framework in Frameworks */,
-				30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30E195C115AC208B00FA0A5C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195C715AC208B00FA0A5C /* SenTestingKit.framework in Frameworks */,
-				30E195C815AC208B00FA0A5C /* UIKit.framework in Frameworks */,
-				30E195C915AC208B00FA0A5C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		30DBD0DF15AEC8FD00B85415 /* Operation */ = {
-			isa = PBXGroup;
-			children = (
-				30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */,
-				30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */,
-			);
-			name = Operation;
-			sourceTree = "<group>";
-		};
-		30E1959F15AC208B00FA0A5C = {
-			isa = PBXGroup;
-			children = (
-				D2B1003015B1922300354480 /* Mapping */,
-				D2B1001E15B1917B00354480 /* NSString+Extensions */,
-				2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */,
-				2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */,
-				30DBD0DF15AEC8FD00B85415 /* Operation */,
-				30E195F615AC2C3B00FA0A5C /* HTTPOperations */,
-				30E195F515AC2C0F00FA0A5C /* Parsing */,
-				30E195E315AC23A000FA0A5C /* NJDXDALRunLoopController.h */,
-				30E195E415AC23A000FA0A5C /* NJDXDALRunLoopController.m */,
-				30E195B415AC208B00FA0A5C /* NJDXDAL */,
-				30E195CC15AC208B00FA0A5C /* NJDXDALTests */,
-				30E195AD15AC208B00FA0A5C /* Frameworks */,
-				30E195AB15AC208B00FA0A5C /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		30E195AB15AC208B00FA0A5C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				30E195AA15AC208B00FA0A5C /* NJDXDAL.app */,
-				30E195C515AC208B00FA0A5C /* NJDXDALTests.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		30E195AD15AC208B00FA0A5C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				30E195AE15AC208B00FA0A5C /* UIKit.framework */,
-				30E195B015AC208B00FA0A5C /* Foundation.framework */,
-				30E195B215AC208B00FA0A5C /* CoreGraphics.framework */,
-				30E195C615AC208B00FA0A5C /* SenTestingKit.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		30E195B415AC208B00FA0A5C /* NJDXDAL */ = {
-			isa = PBXGroup;
-			children = (
-				30E195BD15AC208B00FA0A5C /* AppDelegate.h */,
-				30E195BE15AC208B00FA0A5C /* AppDelegate.m */,
-				30E195DD15AC20CA00FA0A5C /* MainViewController.h */,
-				30E195DE15AC20CA00FA0A5C /* MainViewController.m */,
-				30E195B515AC208B00FA0A5C /* Supporting Files */,
-			);
-			path = NJDXDAL;
-			sourceTree = "<group>";
-		};
-		30E195B515AC208B00FA0A5C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				30E195B615AC208B00FA0A5C /* NJDXDAL-Info.plist */,
-				30E195B715AC208B00FA0A5C /* InfoPlist.strings */,
-				30E195BA15AC208B00FA0A5C /* main.m */,
-				30E195BC15AC208B00FA0A5C /* NJDXDAL-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		30E195CC15AC208B00FA0A5C /* NJDXDALTests */ = {
-			isa = PBXGroup;
-			children = (
-				D25FD54215B1F92500C7C5F8 /* TestClasses */,
-				D2B1001815B1914700354480 /* NJDXDALArticleMappingTest.h */,
-				D2B1001915B1914700354480 /* NJDXDALBookStoreHardMappingTest.h */,
-				D2B1001A15B1914700354480 /* NJDXDALArticleMappingTest.m */,
-				D2B1001B15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m */,
-				D2B1001115B1913600354480 /* TestJSONS */,
-				30E195D215AC208B00FA0A5C /* NJDXDALTests.h */,
-				30E195D315AC208B00FA0A5C /* NJDXDALTests.m */,
-				30E195CD15AC208B00FA0A5C /* Supporting Files */,
-				2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */,
-				2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */,
-			);
-			path = NJDXDALTests;
-			sourceTree = "<group>";
-		};
-		30E195CD15AC208B00FA0A5C /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				30E195CE15AC208B00FA0A5C /* NJDXDALTests-Info.plist */,
-				30E195CF15AC208B00FA0A5C /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		30E195F515AC2C0F00FA0A5C /* Parsing */ = {
-			isa = PBXGroup;
-			children = (
-				30E195E915AC267400FA0A5C /* NJDXDALParsingOperation.h */,
-				30E195EA15AC267400FA0A5C /* NJDXDALParsingOperation.m */,
-				30E195F215AC2BA900FA0A5C /* NJDXDALParsingCenter.h */,
-				30E195F315AC2BA900FA0A5C /* NJDXDALParsingCenter.m */,
-			);
-			name = Parsing;
-			sourceTree = "<group>";
-		};
-		30E195F615AC2C3B00FA0A5C /* HTTPOperations */ = {
-			isa = PBXGroup;
-			children = (
-				30DBD0D415AEB98300B85415 /* NJDXDALParam.h */,
-				30DBD0D515AEB98300B85415 /* NJDXDALParam.m */,
-				30E195E015AC21F500FA0A5C /* NJDXDALHTTPOperation.h */,
-				30E195E115AC21F500FA0A5C /* NJDXDALHTTPOperation.m */,
-				30E195EF15AC2B8100FA0A5C /* NJDXDALOperationsCenter.h */,
-				30E195F015AC2B8100FA0A5C /* NJDXDALOperationsCenter.m */,
-			);
-			name = HTTPOperations;
-			sourceTree = "<group>";
-		};
-		D25FD54215B1F92500C7C5F8 /* TestClasses */ = {
-			isa = PBXGroup;
-			children = (
-				D25FD54315B1F92500C7C5F8 /* Article.h */,
-				D25FD54415B1F92500C7C5F8 /* Article.m */,
-				D25FD54515B1F92500C7C5F8 /* BookStore.h */,
-				D25FD54615B1F92500C7C5F8 /* BookStore.m */,
-			);
-			path = TestClasses;
-			sourceTree = "<group>";
-		};
-		D2B1001115B1913600354480 /* TestJSONS */ = {
-			isa = PBXGroup;
-			children = (
-				D2B1001215B1913600354480 /* inputJSON.txt */,
-				D2B1001315B1913600354480 /* inputJSONHarderWhenEver.txt */,
-			);
-			path = TestJSONS;
-			sourceTree = "<group>";
-		};
-		D2B1001E15B1917B00354480 /* NSString+Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				D2B1001F15B1917B00354480 /* irregularNouns.plist */,
-				D2B1002015B1917B00354480 /* nounsEnds.plist */,
-				D2B1002115B1917B00354480 /* NSString+Extensions.h */,
-				D2B1002215B1917B00354480 /* NSString+Extensions.m */,
-			);
-			path = "NSString+Extensions";
-			sourceTree = "<group>";
-		};
-		D2B1003015B1922300354480 /* Mapping */ = {
-			isa = PBXGroup;
-			children = (
-				D2B1003115B1923A00354480 /* NJDXDALMappingConfigurator.h */,
-				D2B1003215B1923A00354480 /* NJDXDALMappingController.h */,
-				D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */,
-				D2B1003415B1923A00354480 /* NJDXDALMappingController.m */,
-			);
-			name = Mapping;
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		30E195A915AC208B00FA0A5C /* NJDXDAL */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30E195D715AC208B00FA0A5C /* Build configuration list for PBXNativeTarget "NJDXDAL" */;
-			buildPhases = (
-				30E195A615AC208B00FA0A5C /* Sources */,
-				30E195A715AC208B00FA0A5C /* Frameworks */,
-				30E195A815AC208B00FA0A5C /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NJDXDAL;
-			productName = NJDXDAL;
-			productReference = 30E195AA15AC208B00FA0A5C /* NJDXDAL.app */;
-			productType = "com.apple.product-type.application";
-		};
-		30E195C415AC208B00FA0A5C /* NJDXDALTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 30E195DA15AC208B00FA0A5C /* Build configuration list for PBXNativeTarget "NJDXDALTests" */;
-			buildPhases = (
-				30E195C015AC208B00FA0A5C /* Sources */,
-				30E195C115AC208B00FA0A5C /* Frameworks */,
-				30E195C215AC208B00FA0A5C /* Resources */,
-				30E195C315AC208B00FA0A5C /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				30E195CB15AC208B00FA0A5C /* PBXTargetDependency */,
-			);
-			name = NJDXDALTests;
-			productName = NJDXDALTests;
-			productReference = 30E195C515AC208B00FA0A5C /* NJDXDALTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		30E195A115AC208B00FA0A5C /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0430;
-			};
-			buildConfigurationList = 30E195A415AC208B00FA0A5C /* Build configuration list for PBXProject "NJDXDAL" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-			);
-			mainGroup = 30E1959F15AC208B00FA0A5C;
-			productRefGroup = 30E195AB15AC208B00FA0A5C /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				30E195A915AC208B00FA0A5C /* NJDXDAL */,
-				30E195C415AC208B00FA0A5C /* NJDXDALTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		30E195A815AC208B00FA0A5C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195B915AC208B00FA0A5C /* InfoPlist.strings in Resources */,
-				D2B1001415B1913600354480 /* inputJSON.txt in Resources */,
-				D2B1001615B1913600354480 /* inputJSONHarderWhenEver.txt in Resources */,
-				D2B1002315B1917B00354480 /* irregularNouns.plist in Resources */,
-				D2B1002415B1917B00354480 /* nounsEnds.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30E195C215AC208B00FA0A5C /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195D115AC208B00FA0A5C /* InfoPlist.strings in Resources */,
-				D2B1001515B1913600354480 /* inputJSON.txt in Resources */,
-				D2B1001715B1913600354480 /* inputJSONHarderWhenEver.txt in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		30E195C315AC208B00FA0A5C /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		30E195A615AC208B00FA0A5C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195BB15AC208B00FA0A5C /* main.m in Sources */,
-				30E195BF15AC208B00FA0A5C /* AppDelegate.m in Sources */,
-				30E195DF15AC20CA00FA0A5C /* MainViewController.m in Sources */,
-				30E195E215AC21F500FA0A5C /* NJDXDALHTTPOperation.m in Sources */,
-				30E195E515AC23A000FA0A5C /* NJDXDALRunLoopController.m in Sources */,
-				30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */,
-				30E195F115AC2B8100FA0A5C /* NJDXDALOperationsCenter.m in Sources */,
-				30E195F415AC2BA900FA0A5C /* NJDXDALParsingCenter.m in Sources */,
-				2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */,
-				30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */,
-				30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */,
-				D2B1002515B1917B00354480 /* NSString+Extensions.m in Sources */,
-				D2B1003515B1923A00354480 /* NJDXDALMappingConfigurator.m in Sources */,
-				D2B1003615B1923A00354480 /* NJDXDALMappingController.m in Sources */,
-				D25FD54715B1F92500C7C5F8 /* Article.m in Sources */,
-				D25FD54915B1F92500C7C5F8 /* BookStore.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		30E195C015AC208B00FA0A5C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				30E195D415AC208B00FA0A5C /* NJDXDALTests.m in Sources */,
-				2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */,
-				D2B1001C15B1914700354480 /* NJDXDALArticleMappingTest.m in Sources */,
-				D2B1001D15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m in Sources */,
-				D25FD54815B1F92500C7C5F8 /* Article.m in Sources */,
-				D25FD54A15B1F92500C7C5F8 /* BookStore.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		30E195CB15AC208B00FA0A5C /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 30E195A915AC208B00FA0A5C /* NJDXDAL */;
-			targetProxy = 30E195CA15AC208B00FA0A5C /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		30E195B715AC208B00FA0A5C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30E195B815AC208B00FA0A5C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		30E195CF15AC208B00FA0A5C /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				30E195D015AC208B00FA0A5C /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		30E195D515AC208B00FA0A5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				SDKROOT = iphoneos;
-			};
-			name = Debug;
-		};
-		30E195D615AC208B00FA0A5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
-				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				SDKROOT = iphoneos;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		30E195D815AC208B00FA0A5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NJDXDAL/NJDXDAL-Prefix.pch";
-				INFOPLIST_FILE = "NJDXDAL/NJDXDAL-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		30E195D915AC208B00FA0A5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_ARC = YES;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NJDXDAL/NJDXDAL-Prefix.pch";
-				INFOPLIST_FILE = "NJDXDAL/NJDXDAL-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		30E195DB15AC208B00FA0A5C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NJDXDAL.app/NJDXDAL";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NJDXDAL/NJDXDAL-Prefix.pch";
-				INFOPLIST_FILE = "NJDXDALTests/NJDXDALTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		30E195DC15AC208B00FA0A5C /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/NJDXDAL.app/NJDXDAL";
-				CLANG_ENABLE_OBJC_ARC = YES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "NJDXDAL/NJDXDAL-Prefix.pch";
-				INFOPLIST_FILE = "NJDXDALTests/NJDXDALTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		30E195A415AC208B00FA0A5C /* Build configuration list for PBXProject "NJDXDAL" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30E195D515AC208B00FA0A5C /* Debug */,
-				30E195D615AC208B00FA0A5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30E195D715AC208B00FA0A5C /* Build configuration list for PBXNativeTarget "NJDXDAL" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30E195D815AC208B00FA0A5C /* Debug */,
-				30E195D915AC208B00FA0A5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		30E195DA15AC208B00FA0A5C /* Build configuration list for PBXNativeTarget "NJDXDALTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				30E195DB15AC208B00FA0A5C /* Debug */,
-				30E195DC15AC208B00FA0A5C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = 30E195A115AC208B00FA0A5C /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>15DF8FEC15B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParser.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FED15B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParser.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FEE15B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParserJSON.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FEF15B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParserJSON.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FF015B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParserProtocol.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FF115B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParserXML.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FF215B2C15F00F1463D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParserXML.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>15DF8FF315B2C16000F1463D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>15DF8FED15B2C15F00F1463D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>15DF8FF415B2C16000F1463D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>15DF8FEF15B2C15F00F1463D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>15DF8FF515B2C16000F1463D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>15DF8FF215B2C15F00F1463D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2D91AA7315AC8D6000E8A39D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALRequestBuilder.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D91AA7415AC8D6000E8A39D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALRequestBuilder.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D91AA7515AC8D6000E8A39D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2D91AA7415AC8D6000E8A39D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>2D91AA7615AC8EE300E8A39D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALRequestBuilderTests.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D91AA7715AC8EE300E8A39D</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALRequestBuilderTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2D91AA7815AC8EE300E8A39D</key>
+		<dict>
+			<key>fileRef</key>
+			<string>2D91AA7715AC8EE300E8A39D</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30DBD0D415AEB98300B85415</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParam.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30DBD0D515AEB98300B85415</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParam.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30DBD0D615AEB98300B85415</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30DBD0D515AEB98300B85415</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30DBD0DB15AEC3E300B85415</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALOperation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30DBD0DC15AEC3E300B85415</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALOperation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30DBD0DD15AEC3E300B85415</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30DBD0DC15AEC3E300B85415</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30DBD0DF15AEC8FD00B85415</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30DBD0DB15AEC3E300B85415</string>
+				<string>30DBD0DC15AEC3E300B85415</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Operation</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E1959F15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D2B1003015B1922300354480</string>
+				<string>D2B1001E15B1917B00354480</string>
+				<string>2D91AA7315AC8D6000E8A39D</string>
+				<string>2D91AA7415AC8D6000E8A39D</string>
+				<string>30DBD0DF15AEC8FD00B85415</string>
+				<string>30E195F615AC2C3B00FA0A5C</string>
+				<string>30E195F515AC2C0F00FA0A5C</string>
+				<string>30E195E315AC23A000FA0A5C</string>
+				<string>30E195E415AC23A000FA0A5C</string>
+				<string>30E195B415AC208B00FA0A5C</string>
+				<string>30E195CC15AC208B00FA0A5C</string>
+				<string>30E195AD15AC208B00FA0A5C</string>
+				<string>30E195AB15AC208B00FA0A5C</string>
+				<string>E6172D8402B949F8B26F9427</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195A115AC208B00FA0A5C</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0430</string>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>30E195A415AC208B00FA0A5C</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+			</array>
+			<key>mainGroup</key>
+			<string>30E1959F15AC208B00FA0A5C</string>
+			<key>productRefGroup</key>
+			<string>30E195AB15AC208B00FA0A5C</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>30E195A915AC208B00FA0A5C</string>
+				<string>30E195C415AC208B00FA0A5C</string>
+			</array>
+		</dict>
+		<key>30E195A415AC208B00FA0A5C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>30E195D515AC208B00FA0A5C</string>
+				<string>30E195D615AC208B00FA0A5C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>30E195A615AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195BB15AC208B00FA0A5C</string>
+				<string>30E195BF15AC208B00FA0A5C</string>
+				<string>30E195DF15AC20CA00FA0A5C</string>
+				<string>30E195E215AC21F500FA0A5C</string>
+				<string>30E195E515AC23A000FA0A5C</string>
+				<string>30E195EB15AC267400FA0A5C</string>
+				<string>30E195F115AC2B8100FA0A5C</string>
+				<string>30E195F415AC2BA900FA0A5C</string>
+				<string>2D91AA7515AC8D6000E8A39D</string>
+				<string>30DBD0D615AEB98300B85415</string>
+				<string>30DBD0DD15AEC3E300B85415</string>
+				<string>D2B1002515B1917B00354480</string>
+				<string>D2B1003515B1923A00354480</string>
+				<string>D2B1003615B1923A00354480</string>
+				<string>D25FD54715B1F92500C7C5F8</string>
+				<string>D25FD54915B1F92500C7C5F8</string>
+				<string>15DF8FF315B2C16000F1463D</string>
+				<string>15DF8FF415B2C16000F1463D</string>
+				<string>15DF8FF515B2C16000F1463D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195A715AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195AF15AC208B00FA0A5C</string>
+				<string>30E195B115AC208B00FA0A5C</string>
+				<string>30E195B315AC208B00FA0A5C</string>
+				<string>939A3BAB59704CFEB1D48074</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195A815AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195B915AC208B00FA0A5C</string>
+				<string>D2B1001415B1913600354480</string>
+				<string>D2B1001615B1913600354480</string>
+				<string>D2B1002315B1917B00354480</string>
+				<string>D2B1002415B1917B00354480</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195A915AC208B00FA0A5C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>30E195D715AC208B00FA0A5C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>30E195A615AC208B00FA0A5C</string>
+				<string>30E195A715AC208B00FA0A5C</string>
+				<string>30E195A815AC208B00FA0A5C</string>
+				<string>5DD513A1ADC648018B49E3E0</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NJDXDAL</string>
+			<key>productName</key>
+			<string>NJDXDAL</string>
+			<key>productReference</key>
+			<string>30E195AA15AC208B00FA0A5C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>30E195AA15AC208B00FA0A5C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NJDXDAL.app</string>
+			<key>path</key>
+			<string>NJDXDAL.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>30E195AB15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195AA15AC208B00FA0A5C</string>
+				<string>30E195C515AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195AD15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195AE15AC208B00FA0A5C</string>
+				<string>30E195B015AC208B00FA0A5C</string>
+				<string>30E195B215AC208B00FA0A5C</string>
+				<string>30E195C615AC208B00FA0A5C</string>
+				<string>EBE450A12FA54B72A7C8220A</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195AE15AC208B00FA0A5C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>UIKit.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/UIKit.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>30E195AF15AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195AE15AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195B015AC208B00FA0A5C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>Foundation.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/Foundation.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>30E195B115AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195B015AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195B215AC208B00FA0A5C</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>CoreGraphics.framework</string>
+			<key>path</key>
+			<string>System/Library/Frameworks/CoreGraphics.framework</string>
+			<key>sourceTree</key>
+			<string>SDKROOT</string>
+		</dict>
+		<key>30E195B315AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195B215AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195B415AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195BD15AC208B00FA0A5C</string>
+				<string>30E195BE15AC208B00FA0A5C</string>
+				<string>30E195DD15AC20CA00FA0A5C</string>
+				<string>30E195DE15AC20CA00FA0A5C</string>
+				<string>30E195B515AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NJDXDAL</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195B515AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195B615AC208B00FA0A5C</string>
+				<string>30E195B715AC208B00FA0A5C</string>
+				<string>30E195BA15AC208B00FA0A5C</string>
+				<string>30E195BC15AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195B615AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>NJDXDAL-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195B715AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195B815AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195B815AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195B915AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195B715AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195BA15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>main.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195BB15AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195BA15AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195BC15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDAL-Prefix.pch</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195BD15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>AppDelegate.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195BE15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>AppDelegate.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195BF15AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195BE15AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195C015AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195D415AC208B00FA0A5C</string>
+				<string>2D91AA7815AC8EE300E8A39D</string>
+				<string>D2B1001C15B1914700354480</string>
+				<string>D2B1001D15B1914700354480</string>
+				<string>D25FD54815B1F92500C7C5F8</string>
+				<string>D25FD54A15B1F92500C7C5F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195C115AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195C715AC208B00FA0A5C</string>
+				<string>30E195C815AC208B00FA0A5C</string>
+				<string>30E195C915AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195C215AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30E195D115AC208B00FA0A5C</string>
+				<string>D2B1001515B1913600354480</string>
+				<string>D2B1001715B1913600354480</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>30E195C315AC208B00FA0A5C</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string># Run the unit tests in this test bundle.
+"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
+</string>
+		</dict>
+		<key>30E195C415AC208B00FA0A5C</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>30E195DA15AC208B00FA0A5C</string>
+			<key>buildPhases</key>
+			<array>
+				<string>30E195C015AC208B00FA0A5C</string>
+				<string>30E195C115AC208B00FA0A5C</string>
+				<string>30E195C215AC208B00FA0A5C</string>
+				<string>30E195C315AC208B00FA0A5C</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>30E195CB15AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NJDXDALTests</string>
+			<key>productName</key>
+			<string>NJDXDALTests</string>
+			<key>productReference</key>
+			<string>30E195C515AC208B00FA0A5C</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle</string>
+		</dict>
+		<key>30E195C515AC208B00FA0A5C</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>NJDXDALTests.octest</string>
+			<key>path</key>
+			<string>NJDXDALTests.octest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>30E195C615AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>wrapper.framework</string>
+			<key>name</key>
+			<string>SenTestingKit.framework</string>
+			<key>path</key>
+			<string>Library/Frameworks/SenTestingKit.framework</string>
+			<key>sourceTree</key>
+			<string>DEVELOPER_DIR</string>
+		</dict>
+		<key>30E195C715AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195C615AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195C815AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195AE15AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195C915AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195B015AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195CA15AC208B00FA0A5C</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>30E195A115AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>30E195A915AC208B00FA0A5C</string>
+			<key>remoteInfo</key>
+			<string>NJDXDAL</string>
+		</dict>
+		<key>30E195CB15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>30E195A915AC208B00FA0A5C</string>
+			<key>targetProxy</key>
+			<string>30E195CA15AC208B00FA0A5C</string>
+		</dict>
+		<key>30E195CC15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D25FD54215B1F92500C7C5F8</string>
+				<string>D2B1001815B1914700354480</string>
+				<string>D2B1001915B1914700354480</string>
+				<string>D2B1001A15B1914700354480</string>
+				<string>D2B1001B15B1914700354480</string>
+				<string>D2B1001115B1913600354480</string>
+				<string>30E195D215AC208B00FA0A5C</string>
+				<string>30E195D315AC208B00FA0A5C</string>
+				<string>30E195CD15AC208B00FA0A5C</string>
+				<string>2D91AA7615AC8EE300E8A39D</string>
+				<string>2D91AA7715AC8EE300E8A39D</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NJDXDALTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195CD15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195CE15AC208B00FA0A5C</string>
+				<string>30E195CF15AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195CE15AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>NJDXDALTests-Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195CF15AC208B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195D015AC208B00FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195D015AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.strings</string>
+			<key>name</key>
+			<string>en</string>
+			<key>path</key>
+			<string>en.lproj/InfoPlist.strings</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195D115AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195CF15AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195D215AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALTests.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195D315AC208B00FA0A5C</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALTests.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195D415AC208B00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195D315AC208B00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195D515AC208B00FA0A5C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>30E195D615AC208B00FA0A5C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>ARCHS</key>
+				<string>$(ARCHS_STANDARD_32_BIT)</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_VERSION</key>
+				<string>com.apple.compilers.llvm.clang.1_0</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.1</string>
+				<key>OTHER_CFLAGS</key>
+				<string>-DNS_BLOCK_ASSERTIONS=1</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>30E195D715AC208B00FA0A5C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>30E195D815AC208B00FA0A5C</string>
+				<string>30E195D915AC208B00FA0A5C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>30E195D815AC208B00FA0A5C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E6172D8402B949F8B26F9427</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>NJDXDAL/NJDXDAL-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NJDXDAL/NJDXDAL-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>30E195D915AC208B00FA0A5C</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E6172D8402B949F8B26F9427</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>NJDXDAL/NJDXDAL-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NJDXDAL/NJDXDAL-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>app</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>30E195DA15AC208B00FA0A5C</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>30E195DB15AC208B00FA0A5C</string>
+				<string>30E195DC15AC208B00FA0A5C</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>30E195DB15AC208B00FA0A5C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NJDXDAL.app/NJDXDAL</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>NJDXDAL/NJDXDAL-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NJDXDALTests/NJDXDALTests-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>30E195DC15AC208B00FA0A5C</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NJDXDAL.app/NJDXDAL</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(DEVELOPER_LIBRARY_DIR)/Frameworks</string>
+				</array>
+				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
+				<string>YES</string>
+				<key>GCC_PREFIX_HEADER</key>
+				<string>NJDXDAL/NJDXDAL-Prefix.pch</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NJDXDALTests/NJDXDALTests-Info.plist</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>5.0</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUNDLE_LOADER)</string>
+				<key>WRAPPER_EXTENSION</key>
+				<string>octest</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>30E195DD15AC20CA00FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>name</key>
+			<string>MainViewController.h</string>
+			<key>path</key>
+			<string>../MainViewController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195DE15AC20CA00FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>name</key>
+			<string>MainViewController.m</string>
+			<key>path</key>
+			<string>../MainViewController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195DF15AC20CA00FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195DE15AC20CA00FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195E015AC21F500FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALHTTPOperation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195E115AC21F500FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALHTTPOperation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195E215AC21F500FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195E115AC21F500FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195E315AC23A000FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALRunLoopController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195E415AC23A000FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALRunLoopController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195E515AC23A000FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195E415AC23A000FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195E915AC267400FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParsingOperation.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195EA15AC267400FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParsingOperation.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195EB15AC267400FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195EA15AC267400FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195EF15AC2B8100FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALOperationsCenter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195F015AC2B8100FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALOperationsCenter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195F115AC2B8100FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195F015AC2B8100FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195F215AC2BA900FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALParsingCenter.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195F315AC2BA900FA0A5C</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALParsingCenter.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195F415AC2BA900FA0A5C</key>
+		<dict>
+			<key>fileRef</key>
+			<string>30E195F315AC2BA900FA0A5C</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>30E195F515AC2C0F00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30E195E915AC267400FA0A5C</string>
+				<string>30E195EA15AC267400FA0A5C</string>
+				<string>30E195F215AC2BA900FA0A5C</string>
+				<string>15DF8FEC15B2C15F00F1463D</string>
+				<string>15DF8FED15B2C15F00F1463D</string>
+				<string>15DF8FEE15B2C15F00F1463D</string>
+				<string>15DF8FEF15B2C15F00F1463D</string>
+				<string>15DF8FF015B2C15F00F1463D</string>
+				<string>15DF8FF115B2C15F00F1463D</string>
+				<string>15DF8FF215B2C15F00F1463D</string>
+				<string>30E195F315AC2BA900FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Parsing</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30E195F615AC2C3B00FA0A5C</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>30DBD0D415AEB98300B85415</string>
+				<string>30DBD0D515AEB98300B85415</string>
+				<string>30E195E015AC21F500FA0A5C</string>
+				<string>30E195E115AC21F500FA0A5C</string>
+				<string>30E195EF15AC2B8100FA0A5C</string>
+				<string>30E195F015AC2B8100FA0A5C</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>HTTPOperations</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>5DD513A1ADC648018B49E3E0</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Pods-resources.sh"
+</string>
+		</dict>
+		<key>939A3BAB59704CFEB1D48074</key>
+		<dict>
+			<key>fileRef</key>
+			<string>EBE450A12FA54B72A7C8220A</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D25FD54215B1F92500C7C5F8</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D25FD54315B1F92500C7C5F8</string>
+				<string>D25FD54415B1F92500C7C5F8</string>
+				<string>D25FD54515B1F92500C7C5F8</string>
+				<string>D25FD54615B1F92500C7C5F8</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TestClasses</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D25FD54315B1F92500C7C5F8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>Article.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D25FD54415B1F92500C7C5F8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>Article.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D25FD54515B1F92500C7C5F8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>BookStore.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D25FD54615B1F92500C7C5F8</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>BookStore.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D25FD54715B1F92500C7C5F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D25FD54415B1F92500C7C5F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D25FD54815B1F92500C7C5F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D25FD54415B1F92500C7C5F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D25FD54915B1F92500C7C5F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D25FD54615B1F92500C7C5F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D25FD54A15B1F92500C7C5F8</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D25FD54615B1F92500C7C5F8</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001115B1913600354480</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D2B1001215B1913600354480</string>
+				<string>D2B1001315B1913600354480</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>TestJSONS</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001215B1913600354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>inputJSON.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001315B1913600354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text</string>
+			<key>path</key>
+			<string>inputJSONHarderWhenEver.txt</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001415B1913600354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001215B1913600354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001515B1913600354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001215B1913600354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001615B1913600354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001315B1913600354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001715B1913600354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001315B1913600354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001815B1914700354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALArticleMappingTest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001915B1914700354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALBookStoreHardMappingTest.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001A15B1914700354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALArticleMappingTest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001B15B1914700354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALBookStoreHardMappingTest.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001C15B1914700354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001A15B1914700354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001D15B1914700354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001B15B1914700354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1001E15B1917B00354480</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D2B1001F15B1917B00354480</string>
+				<string>D2B1002015B1917B00354480</string>
+				<string>D2B1002115B1917B00354480</string>
+				<string>D2B1002215B1917B00354480</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NSString+Extensions</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1001F15B1917B00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>irregularNouns.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1002015B1917B00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>nounsEnds.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1002115B1917B00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NSString+Extensions.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1002215B1917B00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NSString+Extensions.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1002315B1917B00354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1001F15B1917B00354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1002415B1917B00354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1002015B1917B00354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1002515B1917B00354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1002215B1917B00354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1003015B1922300354480</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>D2B1003115B1923A00354480</string>
+				<string>D2B1003215B1923A00354480</string>
+				<string>D2B1003315B1923A00354480</string>
+				<string>D2B1003415B1923A00354480</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Mapping</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1003115B1923A00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALMappingConfigurator.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1003215B1923A00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.h</string>
+			<key>path</key>
+			<string>NJDXDALMappingController.h</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1003315B1923A00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALMappingConfigurator.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1003415B1923A00354480</key>
+		<dict>
+			<key>fileEncoding</key>
+			<string>4</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.c.objc</string>
+			<key>path</key>
+			<string>NJDXDALMappingController.m</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>D2B1003515B1923A00354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1003315B1923A00354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>D2B1003615B1923A00354480</key>
+		<dict>
+			<key>fileRef</key>
+			<string>D2B1003415B1923A00354480</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>E6172D8402B949F8B26F9427</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Pods.xcconfig</string>
+			<key>sourceTree</key>
+			<string>SOURCE_ROOT</string>
+		</dict>
+		<key>EBE450A12FA54B72A7C8220A</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>name</key>
+			<string>libPods.a</string>
+			<key>path</key>
+			<string>libPods.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>30E195A115AC208B00FA0A5C</string>
+</dict>
+</plist>

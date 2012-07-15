@@ -1,0 +1,5 @@
+PODS:
+  - TBXML (1.5)
+
+DEPENDENCIES:
+  - TBXML (~> 1.5)
