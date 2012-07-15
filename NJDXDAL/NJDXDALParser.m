@@ -26,25 +26,7 @@
             return parsedData;
         }
     }
-<<<<<<< HEAD
-    else if ([aType isEqualToString:@"xml"]) {
-        NSLog(@"data type recognized: %@", aType);
-        parser = [NJDXDALParserXML new];
-    }
-    else if ([aType isEqualToString:@"bplist"]){
-        NSLog(@"data type recognized: %@", aType);
-    }
-    else {
-        NSLog(@"don't recognise data type!");
-        return nil;
-    }
-    parsedData = [parser parseData:aData];    
-    [_delegate didFinishedParsing:parsedData];
-    return parsedData;
-=======
-    NSLog(@"NJDXDALParser: data type DID NOT recognized - %@", aType);
     return nil;
->>>>>>> 52d0c4de9f638ea0a9a2eea0a6c41e65e2d5aa3c
 }
 
 @end

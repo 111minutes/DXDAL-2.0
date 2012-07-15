@@ -10,7 +10,7 @@
 
 @implementation Meta
 
-@synthesize metaCode = _metaCode;
+@synthesize meta = _meta;
 @synthesize errorType = _errorType, errorDetail = _errorDetail;
 
 @end
