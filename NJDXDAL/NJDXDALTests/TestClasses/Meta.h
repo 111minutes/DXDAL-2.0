@@ -10,7 +10,7 @@
 
 @interface Meta : NSObject
 
-@property (nonatomic, assign) NSInteger meta;
+@property (nonatomic, assign) NSInteger codeData;
 @property (nonatomic, strong) NSString *errorType;
 @property (nonatomic, strong) NSString *errorDetail;
 

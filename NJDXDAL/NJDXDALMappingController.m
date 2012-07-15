@@ -146,8 +146,7 @@
     {        
         property = [keys objectAtIndex:i];
         if ([_mappingPropertiesCorrespondence valueForKey:property] != NULL) {
-            //propertyValue = [dictionary valueForKey:[_mappingPropertiesCorrespondence valueForKey:property]];
-            property = [_mappingPropertiesCorrespondence valueForKey:property];
+            propertyValue = [dictionary valueForKey:[_mappingPropertiesCorrespondence valueForKey:property]];
         }
         else {
             NSSet *propertyNames = [self getSetOfPossibleNames:property];

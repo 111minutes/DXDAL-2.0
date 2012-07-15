@@ -78,7 +78,7 @@
         [operation addParam:@"v" value:@"YYYYMMDD"];
                 
         NJDXDALMappingConfigurator *rootConfig = [[NJDXDALMappingConfigurator alloc] initForClass:[Meta class]];
-//        [rootConfig setCorrespondenceOfProperty:@"metaCode" toDataField:@"meta"];
+        [rootConfig setCorrespondenceOfProperty:@"codeData" toDataField:@"code"];
         NJDXDALMappingController *mapper = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:rootConfig keyPath:@"meta"];
         operation.parser.delegate = mapper;
         mapper.delegate = operation;

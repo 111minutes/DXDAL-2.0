@@ -10,7 +10,7 @@
 
 @implementation Meta
 
-@synthesize meta = _meta;
+@synthesize codeData = _codeData;
 @synthesize errorType = _errorType, errorDetail = _errorDetail;
 
 @end

@@ -8,6 +8,12 @@
 
 #import "NJDXDALParserXML.h"
 
+@interface NJDXDALParserXML () 
+
++ (NSDictionary*)dictionaryWithXMLNode:(TBXMLElement*)element;
+
+@end
+
 @implementation NJDXDALParserXML
 
 + (id)parseData:(NSData*) aData;
