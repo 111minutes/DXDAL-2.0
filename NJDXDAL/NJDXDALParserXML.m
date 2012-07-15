@@ -10,7 +10,7 @@
 
 @implementation NJDXDALParserXML
 
-- (id)parseData:(NSData*) aData;
++ (id)parseData:(NSData*) aData;
 {
     NSError *parseError = nil;
     TBXML *XMLObj = [TBXML tbxmlWithXMLData:aData error:&parseError];
@@ -24,7 +24,7 @@
 
 }
 
-- (NSDictionary*)dictionaryWithXMLNode:(TBXMLElement*)element
++ (NSDictionary*)dictionaryWithXMLNode:(TBXMLElement*)element
 {
     NSMutableDictionary *elementDict = [NSMutableDictionary new];
     
@@ -79,6 +79,17 @@
     elementDict = nil;    
     
     return resultDict;
+}
+
++ (BOOL)isDataTypeAcceptable:(NSString *)type;
+{
+    type = [type lowercaseString];
+    if ([type isEqualToString:@"xml"]){
+        return YES;
+    }
+    else {
+        return NO;
+    }
 }
 
 @end

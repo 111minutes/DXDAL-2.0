@@ -10,7 +10,7 @@
 
 @implementation NJDXDALParserJSON
 
-- (id)parseData:(NSData*) aData;
++ (id)parseData:(NSData*) aData;
 {
     NSError *serializationError = nil;
     id JSONObj = [NSJSONSerialization JSONObjectWithData:aData 
@@ -30,6 +30,17 @@
         NSLog(@"invalid JSON!");
         NSLog(@"serialization error: %@", serializationError);
         return nil;
+    }
+}
+
++ (BOOL)isDataTypeAcceptable:(NSString *)type;
+{
+    type = [type lowercaseString];
+    if ([type isEqualToString:@"json"]){
+        return YES;
+    }
+    else {
+        return NO;
     }
 }
 

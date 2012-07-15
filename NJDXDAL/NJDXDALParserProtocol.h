@@ -10,6 +10,8 @@
 
 @protocol NJDXDALParserProtocol <NSObject>
 
-- (id)parseData:(NSData*) aData;
++ (BOOL)isDataTypeAcceptable:(NSString *)type;
++ (id)parseData:(NSData *) aData;
+
 
 @end
