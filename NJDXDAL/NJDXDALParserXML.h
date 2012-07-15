@@ -12,4 +12,6 @@
 
 @interface NJDXDALParserXML : NSObject <NJDXDALParserProtocol>
 
+- (NSDictionary*)dictionaryWithXMLNode:(TBXMLElement*)element;
+
 @end
