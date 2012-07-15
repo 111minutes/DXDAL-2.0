@@ -29,10 +29,10 @@
     return self;
 }
 
-- (NJDXDALOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock
+- (NJDXDALOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock contentType:(NSString *) aContentType
 {
     assert(url != nil);
-    NJDXDALHTTPOperation *operation = [_operationsCenter addRequest:url];
+    NJDXDALHTTPOperation *operation = [_operationsCenter addRequest:url contentType:aContentType];    
     for (id block in _configurationBlock) 
     {
         NJDXDALOperationConfigurationBlock config = block;

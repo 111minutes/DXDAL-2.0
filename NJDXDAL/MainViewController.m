@@ -82,8 +82,8 @@
 
 
 
-    _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock];
-    [_operation start];
+//    _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock];
+//    [_operation start];
     
 
 }

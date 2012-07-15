@@ -9,8 +9,10 @@
 #import <objc/runtime.h>
 #import "NSString+Extensions.h"
 #import "NJDXDALMappingController.h"
+#import "NJDXDALMappingError.m"
+#import "NJDXDALParser.h"
 
-@interface NJDXDALMappingController () 
+@interface NJDXDALMappingController () <SmartParserDelegate>
 {
     id _container;
     Class _mappingClass;
@@ -18,19 +20,25 @@
     NSDictionary *_mappingClassesConfiguration;
     NSDictionary *_mappingPropertiesCorrespondence;
     objc_property_t *_objcClassProperties;   
+    NSMutableArray *_errorsArray;
+    NSString *_containerKeyPath;
 }
 
 - (NSArray *)makeObjectsFromContainer:(id)container;
+- (NSArray *)start;
 - (NSDictionary *)getPropertiesOfClass:(Class)class;
 - (id)getObjectWithClass:(Class)class fromDictionary:(NSDictionary *)dictionary;
 - (void)setValue:(id)propertyValue forProperty:(NSString *)propertyName ofObject:(id)object;
 - (NSSet *)getSetOfPossibleNames:(NSString *)name;
 - (id)formatDateFrom:(NSString *)dateString;
 - (BOOL)isDateProperty:(NSString *)propertyName;
+- (NSArray *)getDataForMapping:(id)container;
 
 @end
 
 @implementation NJDXDALMappingController
+
+@synthesize delegate = _delegate;
 
 - (id)initWithContainer:(id)container mappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator 
 {
@@ -46,15 +54,54 @@
         _classProperties = [self getPropertiesOfClass:_mappingClass];
         _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
         _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
-        
+        _errorsArray = [NSMutableArray new];
     }
     return self;
 }
 
+- (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator {
+    self = [super init];
+    if (self) {
+        _container = nil;
+        if (mappingConfigurator.mappingClass == NSClassFromString(@"NSDictionary")) {
+            _mappingClass = NSClassFromString(@"NSMutableDictionary");
+        }
+        else {
+            _mappingClass = mappingConfigurator.mappingClass;
+        }
+        _classProperties = [self getPropertiesOfClass:_mappingClass];
+        _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
+        _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
+        _errorsArray = [NSMutableArray new];
+    }
+    return self;
+
+}
+
 - (NSArray *)start 
 {
-    return [self makeObjectsFromContainer:_container];
+    NSArray *dataForMappingContainer = [self getDataForMapping:_container];
+    NSArray *array = [self makeObjectsFromContainer:dataForMappingContainer];
+    if ([_delegate respondsToSelector:@selector(didFinishMapping)]) {
+        [_delegate didFinishMappingWithErrorLog:_errorsArray];
+    }
+    return array;
+    
 }
+
+- (NSArray *)getDataForMapping:(id)container 
+{
+    NSMutableArray *dataForMapping = [NSMutableArray new];
+    if ([container isKindOfClass:[NSDictionary class]]) {
+        [dataForMapping addObject:[container valueForKeyPath:_containerKeyPath]];
+    }
+    else {
+        for (NSDictionary *dictionary in container) {
+            [dataForMapping addObject:[dictionary valueForKeyPath:_containerKeyPath]];
+        }
+    }
+    return dataForMapping;
+}    
 
 - (NSArray *)makeObjectsFromContainer:(id)container 
 {
@@ -124,7 +171,10 @@
             [self setValue:propertyValue forProperty:property ofObject:object];
         }
         @catch (NSException *exception) {
-            NSLog(@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object);
+            //NSLog(@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object);
+            //NSString *errorString = [NSString stringWithFormat:@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object];
+            NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithclassName:NSStringFromClass([object class]) propertyName:property propertyValue:propertyValue];
+            [_errorsArray addObject:error];
             [self setValue:nil forProperty:property ofObject:object];
         }
     }
@@ -202,7 +252,8 @@
         date = [formatter dateFromString:dateString];
     }
     @catch (NSException *exception) {
-        NSLog(@"Cannot convert NSDate using custom formatter");
+        NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithclassName:@"NSDate" propertyName:@"Date" propertyValue:dateString];
+        [_errorsArray addObject:error];
     }
     if (date != NULL) {
         return date;
@@ -210,6 +261,18 @@
     else {
         return dateString;
     }
+}
+
+#pragma --
+#pragma mark SmartParserDelegate;
+
+- (void)didFinishedParsing:(id)data 
+{
+    _container = data;
+    [self start];
+}
+- (void)didFailedWithError:(NSError*) error {
+    [_delegate didCrashedParsing:error];
 }
 
 @end
