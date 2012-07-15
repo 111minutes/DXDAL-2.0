@@ -8,19 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "NJDXDALMappingConfigurator.h"
+#import "NJDXDALParser.h"
 
 @protocol MappingDelegate <NSObject>
 
-- (void)didFinishMappingWithErrorLog:(NSArray *)mappingErrorArray;
+- (void)didFinishMapping:(NSArray *)realObjects withErrorLog:(NSArray *)mappingErrorArray;
 - (void)didCrashedParsing:(NSError *)parsingError;
 
 @end
 
-@interface NJDXDALMappingController : NSObject
+@interface NJDXDALMappingController : NSObject <SmartParserDelegate> 
 
 @property (nonatomic, strong) id<MappingDelegate> delegate;
-- (id)initWithContainer:(id)container mappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator;
-- (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator;
+@property (nonatomic, strong) id container;
+
+- (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator keyPath:(NSString *)keyPath;
 - (NSArray *)start;
 
 @end

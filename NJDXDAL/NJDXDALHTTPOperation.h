@@ -8,8 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "NJDXDALOperation.h"
+#import "NJDXDALMappingController.h"
 
 @class NJDXDALHTTPOperation;
+@class NJDXDALParser;
+@class NJDXDALMappingController;
 
 @protocol NJDXDALHTTPOperationDelegate <NSObject>
 
@@ -19,7 +22,7 @@
 
 @end
 
-@interface NJDXDALHTTPOperation : NJDXDALOperation <NSURLConnectionDelegate>
+@interface NJDXDALHTTPOperation : NJDXDALOperation <NSURLConnectionDelegate,MappingDelegate>
 
 @property (nonatomic,strong) NSMutableURLRequest* request;
 @property (nonatomic,readonly) BOOL isExecuting;
@@ -31,6 +34,13 @@
 @property (nonatomic,copy) NSString* httpContentType;
 @property (nonatomic,assign)Class entityClass;
 
+@property (nonatomic,strong) NJDXDALParser *parser;
+@property (nonatomic,strong) NJDXDALMappingController *mapper;
+
+@property (nonatomic, strong) NSString *contentType;
+@property (nonatomic, strong) NSArray *result;
+
+@property (nonatomic, strong) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
 
 //-(void)parser;
 //-(void)mapper;

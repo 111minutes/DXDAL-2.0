@@ -16,7 +16,7 @@
 
 @synthesize delegate = _delegate;
 
-- (void)parseData:(NSData *)aData type:(NSString *)aType;
+- (id)parseData:(NSData *)aData type:(NSString *)aType;
 {
     NSArray *parsers = [NSArray arrayWithArray: [self retrieveParsers]];
     id parsedData = nil;    
@@ -27,17 +27,20 @@
             parsedData = [currentClass parseData:aData error: error];
             if (!error) {
                 [_delegate didFinishedParsing:parsedData];
+                return parsedData;
             }
             else {
                 [_delegate didFailedWithError:error];
+                return nil;
             }
-            return;
         }
     }
+    
     NSLog(@"NJDXDALParser: data type DID NOT recognized - %@", aType);
     error = [NSError errorWithDomain:[NSString stringWithFormat:@"Parsing error. Data type %@ did not recognized.", aType] 
                                 code:1 userInfo:nil];
     [_delegate didFailedWithError:error];
+    return nil;
 }
 
 - (NSArray*)retrieveParsers

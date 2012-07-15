@@ -10,11 +10,9 @@
 #import "NSString+Extensions.h"
 #import "NJDXDALMappingController.h"
 #import "NJDXDALMappingError.m"
-#import "NJDXDALParser.h"
 
-@interface NJDXDALMappingController () <SmartParserDelegate>
+@interface NJDXDALMappingController ()
 {
-    id _container;
     Class _mappingClass;
     NSDictionary *_classProperties;
     NSDictionary *_mappingClassesConfiguration;
@@ -39,27 +37,10 @@
 @implementation NJDXDALMappingController
 
 @synthesize delegate = _delegate;
+@synthesize container = _container;
 
-- (id)initWithContainer:(id)container mappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator 
+- (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator keyPath:(NSString *)keyPath
 {
-    self = [super init];
-    if (self) {
-        _container = container;
-        if (mappingConfigurator.mappingClass == NSClassFromString(@"NSDictionary")) {
-            _mappingClass = NSClassFromString(@"NSMutableDictionary");
-        }
-        else {
-            _mappingClass = mappingConfigurator.mappingClass;
-        }
-        _classProperties = [self getPropertiesOfClass:_mappingClass];
-        _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
-        _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
-        _errorsArray = [NSMutableArray new];
-    }
-    return self;
-}
-
-- (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator {
     self = [super init];
     if (self) {
         _container = nil;
@@ -73,6 +54,7 @@
         _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
         _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
         _errorsArray = [NSMutableArray new];
+        _containerKeyPath = keyPath;
     }
     return self;
 
@@ -80,13 +62,19 @@
 
 - (NSArray *)start 
 {
-    NSArray *dataForMappingContainer = [self getDataForMapping:_container];
-    NSArray *array = [self makeObjectsFromContainer:dataForMappingContainer];
-    if ([_delegate respondsToSelector:@selector(didFinishMapping)]) {
-        [_delegate didFinishMappingWithErrorLog:_errorsArray];
+    NSArray *array;
+    if (_containerKeyPath != nil) {
+        NSArray *dataForMappingContainer = [self getDataForMapping:_container];
+        array = [self makeObjectsFromContainer:dataForMappingContainer];
+    }    
+    else {
+        array = [self makeObjectsFromContainer:_container];    
     }
-    return array;
     
+    //if ([_delegate respondsToSelector:@selector(didFinishMapping::)]) {
+        [_delegate didFinishMapping:array withErrorLog:_errorsArray];
+    //}
+    return array;
 }
 
 - (NSArray *)getDataForMapping:(id)container 
@@ -151,7 +139,12 @@
 {
     id object = [[_mappingClass alloc] init];
     id propertyValue;
-    for (NSString *property in [_classProperties allKeys]) {
+    //for (NSString *property in [_classProperties allKeys]) 
+    NSString *property;
+    NSArray *keys = [_classProperties allKeys];
+    for (int i = 0; i < [keys count]; i++) 
+    {        
+        property = [keys objectAtIndex:i];
         if ([_mappingPropertiesCorrespondence valueForKey:property] != NULL) {
             propertyValue = [dictionary valueForKey:[_mappingPropertiesCorrespondence valueForKey:property]];
         }
@@ -194,7 +187,7 @@
             // if property is built-in object
             newMappingConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:NSClassFromString([_mappingClassesConfiguration valueForKey:propertyName])];
         }
-        NJDXDALMappingController *newMappingController = [[NJDXDALMappingController alloc] initWithContainer:propertyValue mappingConfigurator:newMappingConfigurator];
+        NJDXDALMappingController *newMappingController = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:newMappingConfigurator keyPath:nil];
         NSArray *results = [newMappingController start];
         if ([results count] == 1) {
             propertyValue = [results objectAtIndex:0];

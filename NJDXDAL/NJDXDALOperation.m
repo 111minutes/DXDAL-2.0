@@ -8,9 +8,9 @@
 
 #import "NJDXDALOperation.h"
 
-@implementation NJDXDALOperation
+@implementation NJDXDALOperation 
 
-@synthesize contentType = _contentType;
+@synthesize result = _result;
 
 -(void)start
 {

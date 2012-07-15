@@ -26,6 +26,7 @@
 @property (nonatomic,readonly) BOOL isExecuting;
 @property (nonatomic,assign) BOOL isFinished; 
 @property (nonatomic,readonly) BOOL isCancelled;
+@property (nonatomic,strong) id parsedData;
 
 -(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser;
 -(NJDXDALHTTPOperation*)parentURLOperation;
