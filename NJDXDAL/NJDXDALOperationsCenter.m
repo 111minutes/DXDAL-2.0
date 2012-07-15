@@ -62,7 +62,7 @@
 
 -(void)loadingFinished:(NJDXDALHTTPOperation*)op
 {
-    //NSLog(@"HTTPOperationsCenter message: Loading data is finished.");
+    NSLog(@"HTTPOperationsCenter message: Loading data is finished.");
     [_parsingManager addForParsingURLOperation:op];
 }
 

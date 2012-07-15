@@ -73,7 +73,6 @@
         NJDXDALMappingConfigurator *rootConfig = [[NJDXDALMappingConfigurator alloc] initForClass:[Meta class]];
         [rootConfig setCorrespondenceOfProperty:@"codeData" toDataField:@"code"];
         NJDXDALMappingController *mapper = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:rootConfig keyPath:@"meta"];
-        operation.parser.delegate = mapper; // PARSER HASN't CREATED!!!!!!!!!!!!
         mapper.delegate = operation;
         operation.mapper = mapper;
         

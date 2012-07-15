@@ -25,7 +25,6 @@
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 @synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass, httpContentType = _httpContentType;
 @synthesize contentType = _contentType;
-@synthesize parser = _parser;
 @synthesize mapper = _mapper;
 
 
@@ -153,11 +152,7 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection // all data have taken
-{
-    // our recived data is string
-    NSString *dataString = [[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding];
-    NSLog(@"%@",dataString);
-    
+{    
     // send to delegate that we've finished
     _isExecuting = NO;
     [delegate loadingFinished:self];
@@ -177,7 +172,7 @@
 
 - (void)didCrashedParsing:(NSError *)parsingError
 {
-    
+    NSLog(@"%@",parsingError);
 }
 
 @end

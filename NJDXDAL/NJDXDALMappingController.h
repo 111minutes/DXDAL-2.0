@@ -19,7 +19,7 @@
 
 @interface NJDXDALMappingController : NSObject <SmartParserDelegate> 
 
-@property (nonatomic, strong) id<MappingDelegate> delegate;
+@property (nonatomic, strong) id<MappingDelegate> delegate; //for informing parentOperation when data's mapped.
 @property (nonatomic, strong) id container;
 
 - (id)initWithRootMappingConfigurator:(NJDXDALMappingConfigurator *)mappingConfigurator keyPath:(NSString *)keyPath;

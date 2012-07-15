@@ -37,9 +37,9 @@
     NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
     parsingOperation.delegate = self;
     
-    if(!op.parser.delegate)
+    if(!_parser.delegate)
     {
-        op.parser.delegate = op.mapper;
+        _parser.delegate = op.mapper;
     }
     
     [_parsingQueue addOperation:parsingOperation];
@@ -47,11 +47,8 @@
 
 - (void)didFinishParsing:(NJDXDALParsingOperation*)parsOp
 {
-    parsOp.parentURLOperation.isFinished = YES;    
-    parsOp.parentURLOperation.mapper.container = parsOp.parsedData;
-    [parsOp.parentURLOperation.mapper start];
- //   [parsOp.parentURLOperation.parser.delegate didFinishedParsing:parsOp.parsedData];
-    //NSLog(@"ParsingManager message: parsing is finished");
+    parsOp.parentURLOperation.isFinished = YES;
+    NSLog(@"ParsingСenter message: parsing/mapping operation's finished");
 }
 
 -(void)cancellOperationWithParent:(NJDXDALHTTPOperation*)op

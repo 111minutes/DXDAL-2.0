@@ -15,7 +15,6 @@ typedef void (^NJDXDALOperationConfigurationBlock)(id request);
 
 
 
-
 @interface NJDXDALRequestBuilder : NSObject
 
 @property (nonatomic,strong) NJDXDALOperationsCenter *operationsCenter;

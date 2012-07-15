@@ -37,7 +37,6 @@
 @property (nonatomic,copy) NSString* httpContentType;
 @property (nonatomic,assign)Class entityClass;
 
-@property (nonatomic,strong) NJDXDALParser *parser;
 @property (nonatomic,strong) NJDXDALMappingController *mapper;
 
 @property (nonatomic, strong) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded

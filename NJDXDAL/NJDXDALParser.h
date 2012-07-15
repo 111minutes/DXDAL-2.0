@@ -21,7 +21,7 @@
 
 @interface NJDXDALParser : NSObject
 
-@property (nonatomic, strong) id<SmartParserDelegate> delegate; //for infroming when data parsed [2]
+@property (nonatomic, strong) id<SmartParserDelegate> delegate; //for infroming (mapper) when data's parsed
 
 - (id)parseData:(NSData *)aData type:(NSString *)aType;
 

@@ -22,7 +22,7 @@
 
 @interface NJDXDALParsingOperation : NSOperation
 
-@property (nonatomic,strong) id<NJDXDALParsingOperationDelegate> delegate; //for informing when data's parsed
+@property (nonatomic,strong) id<NJDXDALParsingOperationDelegate> delegate; //for informing when the parsing operation has finished.
 
 @property (nonatomic,readonly) BOOL isExecuting;
 @property (nonatomic,assign) BOOL isFinished; 

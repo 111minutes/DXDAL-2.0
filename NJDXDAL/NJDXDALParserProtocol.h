@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+
+// Protocol for custom parser classes.
+
 @protocol NJDXDALParserProtocol <NSObject>
 
 + (BOOL)isDataTypeAcceptable:(NSString *)type;
