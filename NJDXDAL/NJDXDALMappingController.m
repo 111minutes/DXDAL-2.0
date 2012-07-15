@@ -34,6 +34,7 @@
 
 @end
 
+
 @implementation NJDXDALMappingController
 
 @synthesize delegate = _delegate;
@@ -71,9 +72,7 @@
         array = [self makeObjectsFromContainer:_container];    
     }
     
-    //if ([_delegate respondsToSelector:@selector(didFinishMapping::)]) {
-        [_delegate didFinishMapping:array withErrorLog:_errorsArray];
-    //}
+    [_delegate didFinishMapping:array withErrorLog:_errorsArray];
     return array;
 }
 
@@ -139,7 +138,6 @@
 {
     id object = [[_mappingClass alloc] init];
     id propertyValue;
-    //for (NSString *property in [_classProperties allKeys]) 
     NSString *property;
     NSArray *keys = [_classProperties allKeys];
     for (int i = 0; i < [keys count]; i++) 
@@ -165,7 +163,6 @@
         }
         @catch (NSException *exception) {
             //NSLog(@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object);
-            //NSString *errorString = [NSString stringWithFormat:@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object];
             NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithclassName:NSStringFromClass([object class]) propertyName:property propertyValue:propertyValue];
             [_errorsArray addObject:error];
             [self setValue:nil forProperty:property ofObject:object];
@@ -264,6 +261,7 @@
     _container = data;
     [self start];
 }
+
 - (void)didFailedWithError:(NSError*) error {
     [_delegate didCrashedParsing:error];
 }

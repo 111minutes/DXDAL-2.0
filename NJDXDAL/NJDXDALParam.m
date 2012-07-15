@@ -10,7 +10,7 @@
 
 @implementation NJDXDALParam
 
--(NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue
+- (NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue
 {
     self = [super init];
     if(self)
@@ -21,7 +21,7 @@
     return self;
 }
 
--(NSString*)toString
+- (NSString*)toString
 {
     return [NSString stringWithFormat:@"%@=%@",_key,_value];
 }

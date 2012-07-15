@@ -13,5 +13,4 @@
 + (BOOL)isDataTypeAcceptable:(NSString *)type;
 + (id)parseData:(NSData *)aData error:(NSError *)anError;
 
-
 @end

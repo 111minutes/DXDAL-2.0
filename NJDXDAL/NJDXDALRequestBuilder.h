@@ -9,10 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @class NJDXDALOperationsCenter;
-
 @class NJDXDALOperation;
 
 typedef void (^NJDXDALOperationConfigurationBlock)(id request);
+
+
+
 
 @interface NJDXDALRequestBuilder : NSObject
 

@@ -27,10 +27,9 @@
 @synthesize contentType = _contentType;
 @synthesize parser = _parser;
 @synthesize mapper = _mapper;
-@synthesize result = _result;
 
 
--(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType
+- (NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType
 {
     self = [super init];
     if(self)
@@ -43,12 +42,12 @@
     return self;
 }
 
--(BOOL)isConcurrent
+- (BOOL)isConcurrent
 {
     return YES;
 }
 
--(NSData*)receivedData
+- (NSData*)receivedData
 {
     return _receivedData;
 }
@@ -111,7 +110,7 @@
     }
 }
 
--(void)cancel
+- (void)cancel
 {
     [_connection cancel];
     _isExecuting = NO;
@@ -120,7 +119,7 @@
     [delegate cancelOperation:self];
 }
 
--(void)addParam:(NSString*)key value:(NSString*)aValue
+- (void)addParam:(NSString*)key value:(NSString*)aValue
 {
     assert(key != nil);
     assert(aValue != nil);
@@ -171,9 +170,9 @@
 {
     if ([mappingErrorArray count] == 0) 
     {
-        _result = realObjects;
+        self.mappedData = realObjects;
     }
-    NSLog(@"\n\n%@\n\n",_result);
+    NSLog(@"\n\n%@\n\n",self.mappedData);
 }
 
 - (void)didCrashedParsing:(NSError *)parsingError

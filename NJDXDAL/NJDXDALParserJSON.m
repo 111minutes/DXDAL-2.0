@@ -8,6 +8,7 @@
 
 #import "NJDXDALParserJSON.h"
 
+
 @implementation NJDXDALParserJSON
 
 + (id)parseData:(NSData *) aData error:(NSError *)anError;

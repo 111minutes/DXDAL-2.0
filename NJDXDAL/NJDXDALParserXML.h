@@ -10,6 +10,8 @@
 #import "NJDXDALParserProtocol.h"
 #import "TBXML.h"
 
-@interface NJDXDALParserXML : NSObject <NJDXDALParserProtocol>
 
+// Class for parsing XML data
+
+@interface NJDXDALParserXML : NSObject <NJDXDALParserProtocol>
 @end

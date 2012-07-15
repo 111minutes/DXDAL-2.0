@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import "NJDXDALParserProtocol.h"
 
-@interface NJDXDALParserJSON : NSObject <NJDXDALParserProtocol>
 
+// Class for parsing JSON data
+
+@interface NJDXDALParserJSON : NSObject <NJDXDALParserProtocol>
 @end

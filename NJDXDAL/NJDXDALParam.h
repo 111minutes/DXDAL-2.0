@@ -8,13 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+// Represents params for URLRequests
+
 @interface NJDXDALParam : NSObject
 {
     NSString* _key;  
     NSString* _value;
 }
 
--(NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue;
--(NSString*)toString;
+- (NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue;
+- (NSString*)toString;
 
 @end

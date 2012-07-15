@@ -14,13 +14,15 @@
 @class NJDXDALParser;
 @class NJDXDALMappingController;
 
+
 @protocol NJDXDALHTTPOperationDelegate <NSObject>
 
--(void)startOperation:(NJDXDALOperation*)op;
--(void)loadingFinished:(NJDXDALOperation*)op;
--(void)cancelOperation:(NJDXDALOperation*)op;
+- (void)startOperation:(NJDXDALOperation*)op;
+- (void)loadingFinished:(NJDXDALOperation*)op;
+- (void)cancelOperation:(NJDXDALOperation*)op;
 
 @end
+
 
 @interface NJDXDALHTTPOperation : NJDXDALOperation <NSURLConnectionDelegate,MappingDelegate>
 
@@ -29,6 +31,7 @@
 @property (nonatomic,assign) BOOL isFinished; 
 @property (nonatomic,readonly) BOOL isCancelled;
 
+@property (nonatomic, strong) NSString *contentType;
 @property (nonatomic,copy) NSString* httpMethod;
 @property (nonatomic,copy) NSString* httpPath;
 @property (nonatomic,copy) NSString* httpContentType;
@@ -37,20 +40,14 @@
 @property (nonatomic,strong) NJDXDALParser *parser;
 @property (nonatomic,strong) NJDXDALMappingController *mapper;
 
-@property (nonatomic, strong) NSString *contentType;
-@property (nonatomic, strong) NSArray *result;
-
 @property (nonatomic, strong) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
 
-//-(void)parser;
-//-(void)mapper;
 
-
--(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType;
--(BOOL)isConcurrent;
--(NSData*)receivedData;
--(void)start;
--(void)cancel;
--(void)addParam:(NSString*)key value:(NSString*)aValue;
+- (NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType;
+- (BOOL)isConcurrent;
+- (NSData*)receivedData;
+- (void)start;
+- (void)cancel;
+- (void)addParam:(NSString*)key value:(NSString*)aValue;
 
 @end

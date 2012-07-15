@@ -17,7 +17,6 @@
 
 @interface MainViewController ()
 {
- //   HTTPOperationsManager* _httpOpManager;
     NJDXDALOperationsCenter* _httpOpManager;
     NSMutableURLRequest* _lastRequest;
     NJDXDALOperation *_operation;
@@ -61,18 +60,12 @@
 
 -(void)buttonPressed
 {
-    //    _lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://flapps.ru/example/user-info.php"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
-    
-    //_lastRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"]cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15.0];
-    
-    
     //NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
 
     NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
     NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
     {
         operation.httpMethod = @"GET";
-     //   operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD";
         operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3";
         [operation addParam:@"oauth_token" value:@"XXX"];
         [operation addParam:@"v" value:@"YYYYMMDD"];
@@ -80,7 +73,7 @@
         NJDXDALMappingConfigurator *rootConfig = [[NJDXDALMappingConfigurator alloc] initForClass:[Meta class]];
         [rootConfig setCorrespondenceOfProperty:@"codeData" toDataField:@"code"];
         NJDXDALMappingController *mapper = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:rootConfig keyPath:@"meta"];
-        operation.parser.delegate = mapper;
+        operation.parser.delegate = mapper; // PARSER HASN't CREATED!!!!!!!!!!!!
         mapper.delegate = operation;
         operation.mapper = mapper;
         
@@ -95,7 +88,6 @@
 -(void)cancelPressed
 {
     NSLog(@"Canceling...");
-    //[_httpOpManager cancelOperation:_operation];
     [_operation cancel];
 }
 

@@ -21,7 +21,7 @@
 
 @implementation NJDXDALParsingCenter
 
--(NJDXDALParsingCenter*)init
+- (NJDXDALParsingCenter*)init
 {
     self = [super init];
     if(self)
@@ -32,19 +32,25 @@
     return self;
 }
 
--(void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op 
+- (void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op 
 {
     NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
     parsingOperation.delegate = self;
+    
+    if(!op.parser.delegate)
+    {
+        op.parser.delegate = op.mapper;
+    }
+    
     [_parsingQueue addOperation:parsingOperation];
 }
 
--(void)didFinishParsing:(NJDXDALParsingOperation*)parsOp
+- (void)didFinishParsing:(NJDXDALParsingOperation*)parsOp
 {
     parsOp.parentURLOperation.isFinished = YES;    
     parsOp.parentURLOperation.mapper.container = parsOp.parsedData;
     [parsOp.parentURLOperation.mapper start];
-    //[parsOp.parentURLOperation.parser.delegate didFinishedParsing:parsOp.parsedData];
+ //   [parsOp.parentURLOperation.parser.delegate didFinishedParsing:parsOp.parsedData];
     //NSLog(@"ParsingManager message: parsing is finished");
 }
 

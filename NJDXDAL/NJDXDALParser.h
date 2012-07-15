@@ -15,9 +15,13 @@
 
 @end
 
+
+
+// Class for managing parsing process.
+
 @interface NJDXDALParser : NSObject
 
-@property (nonatomic, strong) id<SmartParserDelegate> delegate;
+@property (nonatomic, strong) id<SmartParserDelegate> delegate; //for infroming when data parsed [2]
 
 - (id)parseData:(NSData *)aData type:(NSString *)aType;
 

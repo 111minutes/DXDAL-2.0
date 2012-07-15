@@ -322,8 +322,8 @@
 			isa = PBXGroup;
 			children = (
 				D2B1003115B1923A00354480 /* NJDXDALMappingConfigurator.h */,
-				D2B1003215B1923A00354480 /* NJDXDALMappingController.h */,
 				D2B1003315B1923A00354480 /* NJDXDALMappingConfigurator.m */,
+				D2B1003215B1923A00354480 /* NJDXDALMappingController.h */,
 				D2B1003415B1923A00354480 /* NJDXDALMappingController.m */,
 			);
 			name = Mapping;

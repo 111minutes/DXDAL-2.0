@@ -12,9 +12,10 @@
 @class NJDXDALParsingOperation;
 @class NJDXDALHTTPOperation;
 
+
 @protocol NJDXDALParsingOperationDelegate <NSObject>
 
--(void)didFinishParsing:(NJDXDALParsingOperation*)parsOp;
+- (void)didFinishParsing:(NJDXDALParsingOperation*)parsOp;
 
 @end
 
@@ -28,9 +29,9 @@
 @property (nonatomic,readonly) BOOL isCancelled;
 @property (nonatomic,strong) id parsedData;
 
--(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser;
--(NJDXDALHTTPOperation*)parentURLOperation;
--(BOOL)isConcurrent;
--(void)cancel;
+- (NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser;
+- (NJDXDALHTTPOperation*)parentURLOperation;
+- (BOOL)isConcurrent;
+- (void)cancel;
 
 @end

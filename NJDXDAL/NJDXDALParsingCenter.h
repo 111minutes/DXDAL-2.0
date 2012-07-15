@@ -13,8 +13,7 @@
 
 @interface NJDXDALParsingCenter : NSObject
 
--(void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op;
--(void)cancellOperationWithParent:(NJDXDALHTTPOperation*)op;
-
+- (void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op;
+- (void)cancellOperationWithParent:(NJDXDALHTTPOperation*)op;
 
 @end

@@ -9,6 +9,7 @@
 #import "NJDXDALParsingOperation.h"
 #import "NJDXDALHTTPOperation.h"
 
+
 @interface NJDXDALParsingOperation ()
 {
     NSData* _data;
@@ -25,7 +26,7 @@
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 @synthesize parsedData = _parsedData;
 
--(NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
+- (NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
 {
     self = [super init];
     if(self)
@@ -38,25 +39,24 @@
     return self;
 }
 
--(BOOL)isConcurrent
+- (BOOL)isConcurrent
 {
     return YES;
 }
 
--(NJDXDALHTTPOperation*)parentURLOperation
+- (NJDXDALHTTPOperation*)parentURLOperation
 {
     return _parentURLOp;
 }
 
--(void)start
+- (void)start
 {
     // some parsing work...
-    
     _parsedData = [_parser parseData:_data type:_dataType];
     [delegate didFinishParsing:self];
 }
 
--(void)cancel
+- (void)cancel
 {
     _isExecuting = NO;
     _isCancelled = YES;

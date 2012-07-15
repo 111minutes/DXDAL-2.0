@@ -12,6 +12,10 @@
 
 @class NJDXDALOperation;
 
+
+
+// Managing all HTTPOperations (adding, canceling).
+
 @interface NJDXDALOperationsCenter : NSObject
 
 @property (nonatomic, strong) NJDXDALRunLoopController* runLoopManager;

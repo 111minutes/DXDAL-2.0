@@ -17,12 +17,12 @@
 
 @implementation NJDXDALRunLoopController
 
--(NSThread*)thread
+- (NSThread*)thread
 {
     return _primaryThread;
 }
 
--(NJDXDALRunLoopController*)init
+- (NJDXDALRunLoopController*)init
 {
     self = [super init];
     if(self)
@@ -33,7 +33,7 @@
     return self;
 }
 
--(void)mainLoop
+- (void)mainLoop
 {
     do
     {

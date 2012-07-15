@@ -8,11 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+
+// The final Operation for the user using. 
+
 @interface NJDXDALOperation : NSOperation
 
-@property (nonatomic, strong) NSArray *result;
+@property (nonatomic, strong) NSArray *mappedData;
 
--(void)start;
--(void)cancel;
+- (void)start;
+- (void)cancel;
 
 @end

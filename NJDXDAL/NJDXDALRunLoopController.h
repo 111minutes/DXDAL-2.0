@@ -8,8 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+
+// Represents a thread with RunLoop for loading data operations
+
 @interface NJDXDALRunLoopController : NSObject
 
--(NSThread*)thread;
+- (NSThread*)thread;
 
 @end

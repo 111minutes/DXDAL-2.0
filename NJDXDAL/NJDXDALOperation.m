@@ -10,14 +10,14 @@
 
 @implementation NJDXDALOperation 
 
-@synthesize result = _result;
+@synthesize mappedData = _mappedData;
 
--(void)start
+- (void)start
 {
     
 }
 
--(void)cancel
+- (void)cancel
 {
     
     
