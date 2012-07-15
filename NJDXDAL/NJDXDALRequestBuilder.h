@@ -10,7 +10,7 @@
 
 @class NJDXDALOperationsCenter;
 
-@class NJDXDALHTTPOperation;
+@class NJDXDALOperation;
 
 typedef void (^NJDXDALOperationConfigurationBlock)(id request);
 
@@ -19,7 +19,7 @@ typedef void (^NJDXDALOperationConfigurationBlock)(id request);
 @property (nonatomic,strong) NJDXDALOperationsCenter *operationsCenter;
 
 - (void)addDefaultConfig:(NJDXDALOperationConfigurationBlock) configurationBlock;
-- (NJDXDALHTTPOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock;
+- (NJDXDALOperation*) operationWithUrl:(NSString*) url configurationBlock:(NJDXDALOperationConfigurationBlock) configBlock contentType:(NSString *) aContentType;
 - (Class)defaultRequestClass;
 
 @end

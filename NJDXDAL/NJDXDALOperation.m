@@ -10,6 +10,8 @@
 
 @implementation NJDXDALOperation
 
+@synthesize contentType = _contentType;
+
 -(void)start
 {
     

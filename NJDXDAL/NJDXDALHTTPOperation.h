@@ -36,7 +36,7 @@
 //-(void)mapper;
 
 
--(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread;
+-(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType;
 -(BOOL)isConcurrent;
 -(NSData*)receivedData;
 -(void)start;

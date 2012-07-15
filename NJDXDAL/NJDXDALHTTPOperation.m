@@ -18,6 +18,7 @@
 }
 
 @property (nonatomic, strong) id<NJDXDALHTTPOperationDelegate> delegate; //for informing when data is loaded
+@property (nonatomic, strong) NSString *contentType;
 
 @end
 
@@ -27,9 +28,10 @@
 @synthesize delegate, request = _request;
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 @synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass, httpContentType = _httpContentType;
+@synthesize contentType = _contentType;
 
 
--(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread
+-(NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType
 {
     self = [super init];
     if(self)
@@ -38,6 +40,7 @@
         _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         _thread = aThread;
         delegate = aDelegate;
+        _contentType = _contentType;
     }
     return self;
 }

@@ -42,9 +42,9 @@
 }
 
 
--(NJDXDALHTTPOperation*)addRequest:(NSString*)url
+-(NJDXDALHTTPOperation*)addRequest:(NSString*)url contentType:(NSString *) aContentType
 {
-    return [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread];
+    return [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread contentType:aContentType];
 }
 
 -(void)cancelOperation:(NJDXDALOperation*)operation

@@ -10,6 +10,8 @@
 
 @interface NJDXDALOperation : NSOperation
 
+@property (nonatomic,strong) NSString *contentType;
+
 -(void)start;
 -(void)cancel;
 
