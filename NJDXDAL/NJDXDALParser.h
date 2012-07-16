@@ -11,7 +11,7 @@
 @protocol NJDXDALParserDelegate <NSObject>
 
 - (void)didFinishedParsing:(id) data;
-- (void)didFailedWithError:(NSError*) error;
+- (void)didFailedWithError:(NSError *) error;
 
 @end
 

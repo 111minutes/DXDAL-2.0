@@ -13,7 +13,7 @@
 
 @protocol NJDXDALParserProtocol <NSObject>
 
-+ (BOOL)isDataTypeAcceptable:(NSString *)type;
-+ (id)parseData:(NSData *)aData error:(NSError *)anError;
++ (BOOL)isDataTypeAcceptable:(NSString *)type;              // Check if data type is appropriate.
++ (id)parseData:(NSData *)aData error:(NSError *)anError;   // Parse data. Use an error necessarily! Return an array or a dictionary.
 
 @end

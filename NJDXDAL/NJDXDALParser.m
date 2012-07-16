@@ -47,7 +47,7 @@
     return nil;
 }
 
-- (NSArray*)retrieveParsers
+- (NSArray *)retrieveParsers
 {
     Class rootClass = [NSObject class];
     NSMutableArray *parsers = [NSMutableArray array];
