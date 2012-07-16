@@ -12,5 +12,6 @@
 
 @synthesize codeData = _codeData;
 @synthesize errorType = _errorType, errorDetail = _errorDetail;
+@synthesize something = _something;
 
 @end

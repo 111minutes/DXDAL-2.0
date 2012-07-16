@@ -52,6 +52,9 @@
             _mappingClass = mappingConfigurator.mappingClass;
         }
         _classProperties = [self getPropertiesOfClass:_mappingClass];
+        if (_classProperties == nil) {
+            [NSException raise:@"UnknownClassException" format:[NSString stringWithFormat:@"Cannot find class %@", NSStringFromClass(_mappingClass)]];
+        }
         _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
         _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
         _errorsArray = [NSMutableArray new];
@@ -78,14 +81,27 @@
 
 - (NSArray *)getDataForMapping:(id)container 
 {
+    BOOL findedDataFlag = NO;
+    id findedData;
     NSMutableArray *dataForMapping = [NSMutableArray new];
     if ([container isKindOfClass:[NSDictionary class]]) {
-        [dataForMapping addObject:[container valueForKeyPath:_containerKeyPath]];
+        findedData = [container valueForKeyPath:_containerKeyPath];
+        if (findedData != NULL) {
+            [dataForMapping addObject:findedData];
+            findedDataFlag = YES;
+        }
     }
     else {
         for (NSDictionary *dictionary in container) {
-            [dataForMapping addObject:[dictionary valueForKeyPath:_containerKeyPath]];
+            findedData = [dictionary valueForKeyPath:_containerKeyPath];
+            if (findedData != NULL) {
+                [dataForMapping addObject:findedData];
+                findedDataFlag = YES;
+            }
         }
+    }
+    if (!findedDataFlag) {
+        [NSException raise:@"WrongKeyPathException" format:[NSString stringWithFormat:@"No data for keyPath %@ found", _containerKeyPath]];
     }
     return dataForMapping;
 }    
@@ -124,6 +140,11 @@
     else {
         unsigned int outCount, i;
         _objcClassProperties = class_copyPropertyList(class, &outCount);
+        if (outCount == 0) {
+            NJDXDALMappingError *mappingError = [[NJDXDALMappingError alloc] initWithClassName:NSStringFromClass(class) propertyName:@"Can't find class" propertyValue:nil];
+            [_errorsArray addObject:mappingError];
+            return nil;
+        }
         for (i = 0; i < outCount; i++) {
             objc_property_t property = _objcClassProperties[i];
             propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
@@ -152,7 +173,7 @@
             NSArray *filteredPropertyKeys = [[dictionary allKeys] filteredArrayUsingPredicate:predicate];
             
             if ([filteredPropertyKeys count] == 0) {
-                propertyValue = nil;
+                continue;
             }
             else {
                 propertyValue = [dictionary valueForKey:[filteredPropertyKeys objectAtIndex:0]];
@@ -162,8 +183,7 @@
             [self setValue:propertyValue forProperty:property ofObject:object];
         }
         @catch (NSException *exception) {
-            //NSLog(@"Cannot set value %@ for property %@ of object %@", propertyValue, property, object);
-            NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithclassName:NSStringFromClass([object class]) propertyName:property propertyValue:propertyValue];
+            NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithClassName:NSStringFromClass([object class]) propertyName:property propertyValue:propertyValue];
             [_errorsArray addObject:error];
             [self setValue:nil forProperty:property ofObject:object];
         }
@@ -242,7 +262,7 @@
         date = [formatter dateFromString:dateString];
     }
     @catch (NSException *exception) {
-        NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithclassName:@"NSDate" propertyName:@"Date" propertyValue:dateString];
+        NJDXDALMappingError *error = [[NJDXDALMappingError alloc] initWithClassName:@"NSDate" propertyName:@"Date" propertyValue:dateString];
         [_errorsArray addObject:error];
     }
     if (date != NULL) {
