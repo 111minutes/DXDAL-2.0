@@ -15,22 +15,22 @@
 
 @protocol NJDXDALParsingOperationDelegate <NSObject>
 
-- (void)didFinishParsing:(NJDXDALParsingOperation*)parsOp;
+- (void)didFinishParsing:(NJDXDALParsingOperation *)parsOp;
 
 @end
 
 
 @interface NJDXDALParsingOperation : NSOperation
 
-@property (nonatomic,strong) id<NJDXDALParsingOperationDelegate> delegate; //for informing when the parsing operation has finished.
+@property (nonatomic, strong) id<NJDXDALParsingOperationDelegate> delegate; //for informing when the parsing operation has finished.
 
-@property (nonatomic,readonly) BOOL isExecuting;
-@property (nonatomic,assign) BOOL isFinished; 
-@property (nonatomic,readonly) BOOL isCancelled;
-@property (nonatomic,strong) id parsedData;
+@property (nonatomic, readonly) BOOL isExecuting;
+@property (nonatomic, assign) BOOL isFinished; 
+@property (nonatomic, readonly) BOOL isCancelled;
+@property (nonatomic, strong) id parsedData;
 
-- (NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser;
-- (NJDXDALHTTPOperation*)parentURLOperation;
+- (NJDXDALParsingOperation *)initWithParentURLOperation:(NJDXDALHTTPOperation *)parentOp parser:(NJDXDALParser *)aParser;
+- (NJDXDALHTTPOperation *)parentURLOperation;
 - (BOOL)isConcurrent;
 - (void)cancel;
 
