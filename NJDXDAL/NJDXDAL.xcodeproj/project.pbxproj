@@ -13,7 +13,6 @@
 		2D2CE23C15B2E33200791888 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2CE23B15B2E33200791888 /* Meta.m */; };
 		2D2CE23D15B2E33200791888 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D2CE23B15B2E33200791888 /* Meta.m */; };
 		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
-		2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */; };
 		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
 		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
 		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
@@ -73,8 +72,6 @@
 		2D2CE23B15B2E33200791888 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
 		2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilder.h; sourceTree = "<group>"; };
 		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
-		2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilderTests.h; sourceTree = "<group>"; };
-		2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilderTests.m; sourceTree = "<group>"; };
 		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
 		30DBD0D515AEB98300B85415 /* NJDXDALParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParam.m; sourceTree = "<group>"; };
 		30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperation.h; sourceTree = "<group>"; };
@@ -239,8 +236,6 @@
 				30E195D215AC208B00FA0A5C /* NJDXDALTests.h */,
 				30E195D315AC208B00FA0A5C /* NJDXDALTests.m */,
 				30E195CD15AC208B00FA0A5C /* Supporting Files */,
-				2D91AA7615AC8EE300E8A39D /* NJDXDALRequestBuilderTests.h */,
-				2D91AA7715AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m */,
 			);
 			path = NJDXDALTests;
 			sourceTree = "<group>";
@@ -483,7 +478,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E195D415AC208B00FA0A5C /* NJDXDALTests.m in Sources */,
-				2D91AA7815AC8EE300E8A39D /* NJDXDALRequestBuilderTests.m in Sources */,
 				D2B1001C15B1914700354480 /* NJDXDALArticleMappingTest.m in Sources */,
 				D2B1001D15B1914700354480 /* NJDXDALBookStoreHardMappingTest.m in Sources */,
 				D25FD54815B1F92500C7C5F8 /* Article.m in Sources */,
