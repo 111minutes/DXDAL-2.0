@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NJDXDALHTTPOperation.h"
 
 @class NJDXDALOperationsCenter;
 @class NJDXDALOperation;
