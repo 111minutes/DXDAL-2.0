@@ -3,7 +3,7 @@
 //  NJDXDAL
 //
 //  Created by Maks on 10.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 #import "NJDXDALRequestBuilderTests.h"

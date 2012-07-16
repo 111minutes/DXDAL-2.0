@@ -1,15 +1,13 @@
 //
-//  SmartParser.m
-//  SmartParser
+//  NJDXDALParser.m
+//  NJDXDAL
 //
 //  Created by android on 12.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 #import <objc/runtime.h>
 #import "NJDXDALParser.h"
-#import "NJDXDALParserJSON.h"
-#import "NJDXDALParserXML.h"
 #import "NJDXDALParserProtocol.h"
 
 @implementation NJDXDALParser
@@ -18,10 +16,10 @@
 
 - (id)parseData:(NSData *)aData type:(NSString *)aType;
 {
-    NSArray *parsers = [NSArray arrayWithArray: [self retrieveParsers]];
+    NSArray *parsers = [NSArray arrayWithArray: [self retrieveParsers]]; // gathering all parse classes
     id parsedData = nil;    
     NSError *error = nil;
-    for (Class<NJDXDALParserProtocol> currentClass in parsers) {
+    for (Class<NJDXDALParserProtocol> currentClass in parsers) { // looking for appropriate parsing class
         if ([currentClass isDataTypeAcceptable: aType]) {
             NSLog(@"NJDXDALParser: data type recognized - %@", aType);
             parsedData = [currentClass parseData:aData error: error];
@@ -61,7 +59,6 @@
             superClass = class_getSuperclass(superClass);
         } while (superClass && superClass != rootClass);                
         if (superClass != nil) {
-            
             NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF BEGINSWITH %@ and self.length > %i", parserNameTemplate, [parserNameTemplate length]];
             if ([predicate evaluateWithObject:NSStringFromClass([allClasses[i] class])] &&
                 [[allClasses[i] class] conformsToProtocol: @protocol(NJDXDALParserProtocol)]) {

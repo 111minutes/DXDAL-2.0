@@ -3,7 +3,7 @@
 //  NJDXDAL
 //
 //  Created by LimeStore on 10.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 #import "NJDXDALParsingCenter.h"
@@ -24,8 +24,7 @@
 - (NJDXDALParsingCenter*)init
 {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         _parsingQueue = [NSOperationQueue new];
         _parser = [NJDXDALParser new];
     }
@@ -37,8 +36,7 @@
     NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
     parsingOperation.delegate = self;
     
-    if(!_parser.delegate)
-    {
+    if(!_parser.delegate) {
         _parser.delegate = op.mapper;
     }
     
@@ -54,10 +52,8 @@
 -(void)cancellOperationWithParent:(NJDXDALHTTPOperation*)op
 {
     NSArray* operations = [_parsingQueue operations];
-    for(NJDXDALParsingOperation* pOp in operations)
-    {
-        if([pOp.parentURLOperation isEqual:op])
-        {
+    for(NJDXDALParsingOperation* pOp in operations) {
+        if([pOp.parentURLOperation isEqual:op]) {
             [pOp cancel];
         }
     }

@@ -3,7 +3,7 @@
 //  TestConnection
 //
 //  Created by Yury Grinenko on 13.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 //  Logic unit tests contain unit test code that is designed to be linked into an independent test executable.

@@ -3,7 +3,7 @@
 //  NJDXDAL
 //
 //  Created by LimeStore on 10.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 #import "NJDXDALParsingOperation.h"
@@ -29,8 +29,7 @@
 - (NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
 {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         _data = parentOp.receivedData;        
         _dataType = parentOp.contentType;
         _parentURLOp = parentOp;
@@ -51,7 +50,7 @@
 
 - (void)start
 {
-    // some parsing work...
+    // start parsing work
     _parsedData = [_parser parseData:_data type:_dataType];
     [delegate didFinishParsing:self];
 }

@@ -1,9 +1,9 @@
 //
-//  SmartParserXML.m
-//  SmartParser
+//  NJDXDALParserXML.m
+//  NJDXDAL
 //
 //  Created by android on 13.07.12.
-//  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012 111Minutes. All rights reserved.
 //
 
 #import "NJDXDALParserXML.h"
@@ -30,6 +30,7 @@
 
 }
 
+// recursive extraction of all attributes and content of elements
 + (NSDictionary*)dictionaryWithXMLNode:(TBXMLElement*)element
 {
     NSMutableDictionary *elementDict = [NSMutableDictionary new];
