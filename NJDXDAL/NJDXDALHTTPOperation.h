@@ -34,7 +34,6 @@
 @property (nonatomic, strong) NSString *contentType;
 @property (nonatomic, copy) NSString *httpMethod;
 @property (nonatomic, copy) NSString *httpPath;
-@property (nonatomic, copy) NSString *httpContentType;
 @property (nonatomic, assign)Class entityClass;
 
 @property (nonatomic, strong) NJDXDALMappingController *mapper;

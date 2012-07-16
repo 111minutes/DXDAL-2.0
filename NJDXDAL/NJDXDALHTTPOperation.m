@@ -23,7 +23,7 @@
 
 @synthesize delegate, request = _request;
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
-@synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass, httpContentType = _httpContentType;
+@synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass;
 @synthesize contentType = _contentType;
 @synthesize mapper = _mapper;
 
@@ -55,20 +55,21 @@
     // creating connection 
     _request.HTTPMethod = [_httpMethod copy];
     NSString *absoluteString = _request.URL.absoluteString;
-    _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,_httpPath]];                    
+    if (_httpPath) {
+        _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,_httpPath]];
+    }
     //adding params
     NSMutableString* paramString = [NSMutableString stringWithFormat:@""];
     if ([_request.HTTPMethod isEqualToString:@"POST"] || [_request.HTTPMethod isEqualToString:@"PUT"]) {            
         for(int i = 0; i < [_params count]; i++) {
             if(i == 0) {
-                [paramString stringByAppendingString:[NSString stringWithFormat:@"%@", [[_params objectAtIndex:i] toString]]];
+                [paramString appendString:[NSString stringWithFormat:@"%@", [[_params objectAtIndex:i] toString]]];
             }
             else {
-                [paramString stringByAppendingString:[NSString stringWithFormat:@"&%@", [[_params objectAtIndex:i] toString]]];
+                [paramString appendString:[NSString stringWithFormat:@"&%@", [[_params objectAtIndex:i] toString]]];
             }
         }
         [_request setHTTPBody: [paramString dataUsingEncoding:NSUTF8StringEncoding]];
-        [_request setValue:_httpContentType forHTTPHeaderField:@"Content-Type"];
         [_request setValue:[NSString stringWithFormat:@"%d",[paramString length]] forHTTPHeaderField:@"Content-Length"];
     }
     else if([_request.HTTPMethod isEqualToString:@"GET"] || [_request.HTTPMethod isEqualToString:@"DELETE"]) {
@@ -144,6 +145,7 @@
     // send to delegate that we've finished
     _isExecuting = NO;
     [delegate loadingFinished:self];
+//    NSLog(@"\n\n%@\n\n",[[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding]);
 }
 
 #pragma mark -

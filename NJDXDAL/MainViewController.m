@@ -60,7 +60,7 @@
 
 -(void)buttonPressed
 {
-    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
+  /*  NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
     NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation) {
         operation.httpMethod = @"GET";
         operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3";
@@ -76,7 +76,16 @@
     };
 
     _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock contentType:@"json"];
-    [_operation start];
+    [_operation start];*/
+    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
+    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation) {
+        operation.httpMethod = @"POST";
+        
+        [operation addParam:@"password" value:@"1111aa"];       
+        [operation addParam:@"email" value:@"pirogsergik@rambler.ru"];
+    };
+    NJDXDALOperation *loginOperation = [requestBuilder operationWithUrl:@"http://kc.9bitinteractive.com/mobile/users/login" configurationBlock:configBlock contentType:@"JSON"];
+    [loginOperation start];
 }
 
 -(void)cancelPressed
