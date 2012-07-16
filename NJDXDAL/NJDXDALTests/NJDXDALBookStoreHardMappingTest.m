@@ -55,7 +55,9 @@
     
     [rootConfigurator setMappingOfProperty:@"numberOfArticles" toMappingConfigurator:numberOfArticlesConfigurator];
         
-    NJDXDALMappingController *mappingController = [[NJDXDALMappingController alloc] initWithContainer:parsedData mappingConfigurator:rootConfigurator];
+    NJDXDALMappingController *mappingController = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:rootConfigurator keyPath:nil];
+    mappingController.container = parsedData;
+
     NSArray *mappedResult = [mappingController start];
     
     STAssertEqualObjects([_handMadeBookStore description], [[mappedResult objectAtIndex:0] description], @"Mapping failed");    

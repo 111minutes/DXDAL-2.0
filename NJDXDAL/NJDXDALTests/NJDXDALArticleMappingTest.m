@@ -47,7 +47,9 @@
     
     _mappingConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:[Article class]];
     
-    _mappingController = [[NJDXDALMappingController alloc] initWithContainer:parsedData mappingConfigurator:_mappingConfigurator];
+    _mappingController = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:_mappingConfigurator keyPath:nil];
+    
+    _mappingController.container = parsedData;
     NSArray *mappedResult = [_mappingController start];
     
     STAssertTrue([_mappedArray count] == [mappedResult count], @"Should be equals");

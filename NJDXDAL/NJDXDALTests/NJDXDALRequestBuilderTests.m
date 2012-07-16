@@ -23,12 +23,12 @@
 
 - (void)testAddedConfigBlock
 {
-    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
+/*    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
     {
         operation.httpMethod = @"POST";
     };
     NJDXDALOperation *operation = [_requestBuilder operationWithUrl:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD" configurationBlock:configBlock];
-    [operation start];
+   [operation start]; */
 }
 
 @end

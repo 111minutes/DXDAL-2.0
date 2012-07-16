@@ -51,10 +51,7 @@
         else {
             _mappingClass = mappingConfigurator.mappingClass;
         }
-        _classProperties = [self getPropertiesOfClass:_mappingClass];
-        if (_classProperties == nil) {
-            [NSException raise:@"UnknownClassException" format:[NSString stringWithFormat:@"Cannot find class %@", NSStringFromClass(_mappingClass)]];
-        }
+        _classProperties = nil;
         _mappingClassesConfiguration = mappingConfigurator.mappingClassConfiguration;
         _mappingPropertiesCorrespondence = mappingConfigurator.mappingCorrespondence;
         _errorsArray = [NSMutableArray new];
@@ -66,6 +63,10 @@
 
 - (NSArray *)start 
 {
+    _classProperties = [self getPropertiesOfClass:_mappingClass];
+    if (_classProperties == nil) {
+        [NSException raise:@"UnknownClassException" format:[NSString stringWithFormat:@"Cannot find class %@", NSStringFromClass(_mappingClass)]];
+    }
     NSArray *array;
     if (_containerKeyPath != nil) {
         NSArray *dataForMappingContainer = [self getDataForMapping:_container];
@@ -205,6 +206,7 @@
             newMappingConfigurator = [[NJDXDALMappingConfigurator alloc] initForClass:NSClassFromString([_mappingClassesConfiguration valueForKey:propertyName])];
         }
         NJDXDALMappingController *newMappingController = [[NJDXDALMappingController alloc] initWithRootMappingConfigurator:newMappingConfigurator keyPath:nil];
+        newMappingController.container = propertyValue;
         NSArray *results = [newMappingController start];
         if ([results count] == 1) {
             propertyValue = [results objectAtIndex:0];
