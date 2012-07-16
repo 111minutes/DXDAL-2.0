@@ -60,11 +60,8 @@
 
 -(void)buttonPressed
 {
-    //NJDXDALHTTPOperation* op = [_httpOpManager addRequest:@"https://api.foursquare.com/v2/venues/40a55d80f964a52020f31ee3?oauth_token=XXX&v=YYYYMMDD"];
-
     NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
-    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation)
-    {
+    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation) {
         operation.httpMethod = @"GET";
         operation.httpPath = @"/v2/venues/40a55d80f964a52020f31ee3";
         [operation addParam:@"oauth_token" value:@"XXX"];
@@ -80,8 +77,6 @@
 
     _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock contentType:@"json"];
     [_operation start];
-    
-
 }
 
 -(void)cancelPressed

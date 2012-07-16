@@ -14,6 +14,6 @@
 @property (nonatomic, strong) NSString *propertyName;
 @property (nonatomic, strong) id propertyValue;
 
-- (id)initWithclassName:(NSString *)className propertyName:(NSString *)propertyName propertyValue:(id)propertyValue;
+- (id)initWithClassName:(NSString *)className propertyName:(NSString *)propertyName propertyValue:(id)propertyValue;
 
 @end

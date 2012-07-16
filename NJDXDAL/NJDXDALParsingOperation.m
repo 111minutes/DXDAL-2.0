@@ -12,13 +12,12 @@
 
 @interface NJDXDALParsingOperation ()
 {
-    NSData* _data;
-    NSString* _dataType;
-    NJDXDALHTTPOperation* _parentURLOp;
-    NJDXDALParser* _parser;
+    NSData *_data;
+    NSString *_dataType;
+    NJDXDALHTTPOperation *_parentURLOp;
+    NJDXDALParser *_parser;
 }
 @end
-
 
 @implementation NJDXDALParsingOperation
 
@@ -26,7 +25,7 @@
 @synthesize isFinished = _isFinished, isExecuting = _isExecuting, isCancelled = _isCancelled;
 @synthesize parsedData = _parsedData;
 
-- (NJDXDALParsingOperation*)initWithParentURLOperation:(NJDXDALHTTPOperation*)parentOp parser:(NJDXDALParser*) aParser
+- (NJDXDALParsingOperation *)initWithParentURLOperation:(NJDXDALHTTPOperation *)parentOp parser:(NJDXDALParser *)aParser
 {
     self = [super init];
     if(self) {
@@ -60,6 +59,5 @@
     _isExecuting = NO;
     _isCancelled = YES;
 }
-
 
 @end

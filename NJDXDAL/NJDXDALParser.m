@@ -10,6 +10,12 @@
 #import "NJDXDALParser.h"
 #import "NJDXDALParserProtocol.h"
 
+@interface NJDXDALParser ()
+
+- (NSArray*)retrieveParsers;
+
+@end
+
 @implementation NJDXDALParser
 
 @synthesize delegate = _delegate;

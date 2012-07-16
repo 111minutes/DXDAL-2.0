@@ -14,7 +14,7 @@
 @synthesize propertyName = _propertyName;
 @synthesize propertyValue =  _propertyValue;
 
-- (id)initWithclassName:(NSString *)className propertyName:(NSString *)propertyName propertyValue:(id)propertyValue {
+- (id)initWithClassName:(NSString *)className propertyName:(NSString *)propertyName propertyValue:(id)propertyValue {
     self = [super init];
     if (self) {
         _className = className;

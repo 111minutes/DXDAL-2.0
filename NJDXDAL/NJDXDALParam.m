@@ -13,8 +13,7 @@
 - (NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue
 {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         _key = aKey;
         _value = aValue;
     }

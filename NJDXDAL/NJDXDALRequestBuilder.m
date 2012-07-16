@@ -21,8 +21,7 @@
 - (id)init
 {
     self = [super init];
-    if (self) 
-    {
+    if (self) {
         _operationsCenter = [NJDXDALOperationsCenter new];
         _configurationBlock = [NSMutableArray array];
     }
@@ -33,13 +32,11 @@
 {
     assert(url != nil);
     NJDXDALHTTPOperation *operation = [_operationsCenter addRequest:url contentType:aContentType];    
-    for (id block in _configurationBlock) 
-    {
+    for (id block in _configurationBlock) {
         NJDXDALOperationConfigurationBlock config = block;
         config(operation);
     }
-    if (configBlock != nil) 
-    {
+    if (configBlock != nil) {
         configBlock(operation);
     }
     return (NJDXDALOperation*)operation;
@@ -49,11 +46,4 @@
 {
     [_configurationBlock addObject:configurationBlock];
 }
-
-- (Class)defaultRequestClass
-{
-  //  NSAssert(NO, @"Override this method in subclasses!");
-    return nil;
-}
-
 @end

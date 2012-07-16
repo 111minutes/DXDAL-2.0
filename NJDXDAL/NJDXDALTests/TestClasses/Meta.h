@@ -13,5 +13,6 @@
 @property (nonatomic, assign) NSInteger codeData;
 @property (nonatomic, strong) NSString *errorType;
 @property (nonatomic, strong) NSString *errorDetail;
+@property (nonatomic, strong) NSString *something;
 
 @end

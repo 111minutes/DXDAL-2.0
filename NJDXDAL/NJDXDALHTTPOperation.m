@@ -28,11 +28,10 @@
 @synthesize mapper = _mapper;
 
 
-- (NJDXDALHTTPOperation*)initWithURL:(NSString*)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread*)aThread contentType:(NSString *) aContentType
+- (NJDXDALHTTPOperation*)initWithURL:(NSString *)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread *)aThread contentType:(NSString *)aContentType
 {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         _request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]];
         _thread = aThread;
         delegate = aDelegate;
@@ -59,16 +58,12 @@
     _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,_httpPath]];                    
     //adding params
     NSMutableString* paramString = [NSMutableString stringWithFormat:@""];
-    if ([_request.HTTPMethod isEqualToString:@"POST"] || [_request.HTTPMethod isEqualToString:@"PUT"]) 
-    {            
-        for(int i = 0; i < [_params count]; i++)
-        {
-            if(i == 0)
-            {
+    if ([_request.HTTPMethod isEqualToString:@"POST"] || [_request.HTTPMethod isEqualToString:@"PUT"]) {            
+        for(int i = 0; i < [_params count]; i++) {
+            if(i == 0) {
                 [paramString stringByAppendingString:[NSString stringWithFormat:@"%@", [[_params objectAtIndex:i] toString]]];
             }
-            else 
-            {
+            else {
                 [paramString stringByAppendingString:[NSString stringWithFormat:@"&%@", [[_params objectAtIndex:i] toString]]];
             }
         }
@@ -76,16 +71,12 @@
         [_request setValue:_httpContentType forHTTPHeaderField:@"Content-Type"];
         [_request setValue:[NSString stringWithFormat:@"%d",[paramString length]] forHTTPHeaderField:@"Content-Length"];
     }
-    else if([_request.HTTPMethod isEqualToString:@"GET"] || [_request.HTTPMethod isEqualToString:@"DELETE"]) 
-    {
-        for(int i = 0; i < [_params count]; i++)
-        {
-            if(i == 0)
-            {
+    else if([_request.HTTPMethod isEqualToString:@"GET"] || [_request.HTTPMethod isEqualToString:@"DELETE"]) {
+        for(int i = 0; i < [_params count]; i++) {
+            if(i == 0) {
                 [paramString appendString:[NSString stringWithFormat:@"?%@", [[_params objectAtIndex:i] toString]]];
             }
-            else 
-            {
+            else {
                 [paramString appendString:[NSString stringWithFormat:@"&%@", [[_params objectAtIndex:i] toString]]];
             }
         }
@@ -93,16 +84,14 @@
         _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,paramString]];
     }
     _connection = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:NO];
-    if (_connection) 
-    {
+    if (_connection) {
         // start loading
         NSLog(@"Connecting...");
         _isExecuting = YES;
         _receivedData = [NSMutableData data];
         [_connection performSelector:@selector(start) onThread:_thread withObject:nil waitUntilDone:NO];
     }
-    else 
-    {
+    else {
         NSLog(@"Connection error!");
         _isExecuting = NO;
         _isFinished = YES;
@@ -118,12 +107,11 @@
     [delegate cancelOperation:self];
 }
 
-- (void)addParam:(NSString*)key value:(NSString*)aValue
+- (void)addParam:(NSString *)key value:(NSString *)aValue
 {
     assert(key != nil);
     assert(aValue != nil);
-    if (!_params)
-    {
+    if (!_params) {
         _params = [NSMutableArray array];
     }    
     [_params addObject: [[NJDXDALParam alloc] initWithKey:key value:aValue]];
