@@ -13,7 +13,7 @@
 
 @interface NJDXDALParsingCenter() <NJDXDALParsingOperationDelegate>
 {
-    NSOperationQueue* _parsingQueue;
+    NSOperationQueue *_parsingQueue;
     NJDXDALParser *_parser;
 }
 @end
@@ -21,7 +21,7 @@
 
 @implementation NJDXDALParsingCenter
 
-- (NJDXDALParsingCenter*)init
+- (NJDXDALParsingCenter *)init
 {
     self = [super init];
     if(self)
@@ -32,13 +32,12 @@
     return self;
 }
 
-- (void)addForParsingURLOperation:(NJDXDALHTTPOperation*)op 
+- (void)addForParsingURLOperation:(NJDXDALHTTPOperation *)op 
 {
-    NJDXDALParsingOperation* parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
+    NJDXDALParsingOperation *parsingOperation = [[NJDXDALParsingOperation alloc] initWithParentURLOperation:op parser: _parser];
     parsingOperation.delegate = self;
     
-    if(!_parser.delegate)
-    {
+    if(!_parser.delegate) {
         _parser.delegate = op.mapper;
     }
     

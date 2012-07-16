@@ -12,8 +12,6 @@
 
 @class NJDXDALOperation;
 
-
-
 // Managing all HTTPOperations (adding, canceling).
 
 @interface NJDXDALOperationsCenter : NSObject
@@ -21,7 +19,7 @@
 @property (nonatomic, strong) NJDXDALRunLoopController* runLoopManager;
 @property (nonatomic, strong) NJDXDALParsingCenter* parsingManager;
 
--(NJDXDALHTTPOperation*)addRequest:(NSString*)url contentType:(NSString *) aContentType;
--(void)cancelOperation:(NJDXDALOperation*)operation;
+-(NJDXDALHTTPOperation *)addRequest:(NSString *)url contentType:(NSString *) aContentType;
+-(void)cancelOperation:(NJDXDALOperation *)operation;
 
 @end

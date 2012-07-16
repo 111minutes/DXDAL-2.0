@@ -11,10 +11,10 @@
 
 @interface NJDXDALOperationsCenter () <NJDXDALHTTPOperationDelegate>
 {
-    NSOperationQueue* _opQueue;
+    NSOperationQueue *_opQueue;
 }
 
--(NJDXDALOperationsCenter*)initWithRunLoopManager:(NJDXDALRunLoopController*)rlm;
+-(NJDXDALOperationsCenter *)initWithRunLoopManager:(NJDXDALRunLoopController *)rlm;
 
 @end
 
@@ -23,17 +23,16 @@
 
 @synthesize runLoopManager = _runLoopManager, parsingManager = _parsingManager;
 
--(NJDXDALOperationsCenter*)init
+-(NJDXDALOperationsCenter *)init
 {
     self = [self initWithRunLoopManager:[NJDXDALRunLoopController new]];
     return self;
 }
 
--(NJDXDALOperationsCenter*)initWithRunLoopManager:(NJDXDALRunLoopController*)rlm
+-(NJDXDALOperationsCenter *)initWithRunLoopManager:(NJDXDALRunLoopController *)rlm
 {
     self = [super init];
-    if(self)
-    {
+    if(self) {
         _opQueue = [NSOperationQueue new];
         _runLoopManager = rlm;
         _parsingManager = [NJDXDALParsingCenter new];
@@ -41,32 +40,30 @@
     return self;
 }
 
-
--(NJDXDALHTTPOperation*)addRequest:(NSString*)url contentType:(NSString *) aContentType
+-(NJDXDALHTTPOperation *)addRequest:(NSString *)url contentType:(NSString *)aContentType
 {
     return [[NJDXDALHTTPOperation alloc] initWithURL:url delegate:self thread:_runLoopManager.thread contentType:aContentType];
 }
 
--(void)cancelOperation:(NJDXDALOperation*)operation
+-(void)cancelOperation:(NJDXDALOperation *)operation
 {
-    NSArray* operations = [_opQueue operations];
-    for(NJDXDALHTTPOperation* op in operations)
+    NSArray *operations = [_opQueue operations];
+    for(NJDXDALHTTPOperation *op in operations)
     {
-        if([op isEqual:operation])
-        {
+        if([op isEqual:operation]) {
             [op cancel];
             [_parsingManager cancellOperationWithParent:op]; // cancelling parsing operation
         }
     }
 }
 
--(void)loadingFinished:(NJDXDALHTTPOperation*)op
+-(void)loadingFinished:(NJDXDALHTTPOperation *)op
 {
     NSLog(@"HTTPOperationsCenter message: Loading data is finished.");
     [_parsingManager addForParsingURLOperation:op];
 }
 
--(void)startOperation:(NJDXDALHTTPOperation*)op
+-(void)startOperation:(NJDXDALHTTPOperation *)op
 {
     [_opQueue addOperation:op];
 }
