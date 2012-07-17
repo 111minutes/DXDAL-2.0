@@ -10,17 +10,17 @@
 		15DF8FF315B2C16000F1463D /* NJDXDALParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8FED15B2C15F00F1463D /* NJDXDALParser.m */; };
 		15DF8FF415B2C16000F1463D /* NJDXDALParserJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8FEF15B2C15F00F1463D /* NJDXDALParserJSON.m */; };
 		15DF8FF515B2C16000F1463D /* NJDXDALParserXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 15DF8FF215B2C15F00F1463D /* NJDXDALParserXML.m */; };
-		2D8C9FC715B555B300B0E255 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FC615B555B300B0E255 /* MainViewController.m */; };
-		2D8C9FDC15B555E300B0E255 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C9FC915B555E300B0E255 /* InfoPlist.strings */; };
-		2D8C9FDD15B555E300B0E255 /* NJDXDALArticleMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FCC15B555E300B0E255 /* NJDXDALArticleMappingTest.m */; };
-		2D8C9FDE15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FCE15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.m */; };
-		2D8C9FDF15B555E300B0E255 /* NJDXDALTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C9FCF15B555E300B0E255 /* NJDXDALTests-Info.plist */; };
-		2D8C9FE015B555E300B0E255 /* NJDXDALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FD115B555E300B0E255 /* NJDXDALTests.m */; };
-		2D8C9FE115B555E300B0E255 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FD415B555E300B0E255 /* Article.m */; };
-		2D8C9FE215B555E300B0E255 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FD615B555E300B0E255 /* BookStore.m */; };
-		2D8C9FE315B555E300B0E255 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8C9FD815B555E300B0E255 /* Meta.m */; };
-		2D8C9FE415B555E300B0E255 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C9FDA15B555E300B0E255 /* inputJSON.txt */; };
-		2D8C9FE515B555E300B0E255 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8C9FDB15B555E300B0E255 /* inputJSONHarderWhenEver.txt */; };
+		2D8CA03315B55A8E00B0E255 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA02015B55A8E00B0E255 /* InfoPlist.strings */; };
+		2D8CA03415B55A8E00B0E255 /* NJDXDALArticleMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02315B55A8E00B0E255 /* NJDXDALArticleMappingTest.m */; };
+		2D8CA03515B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02515B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.m */; };
+		2D8CA03615B55A8E00B0E255 /* NJDXDALTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA02615B55A8E00B0E255 /* NJDXDALTests-Info.plist */; };
+		2D8CA03715B55A8E00B0E255 /* NJDXDALTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02815B55A8E00B0E255 /* NJDXDALTests.m */; };
+		2D8CA03815B55A8E00B0E255 /* Article.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02B15B55A8E00B0E255 /* Article.m */; };
+		2D8CA03915B55A8E00B0E255 /* BookStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02D15B55A8E00B0E255 /* BookStore.m */; };
+		2D8CA03A15B55A8E00B0E255 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02F15B55A8E00B0E255 /* Meta.m */; };
+		2D8CA03B15B55A8E00B0E255 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA03115B55A8E00B0E255 /* inputJSON.txt */; };
+		2D8CA03C15B55A8E00B0E255 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA03215B55A8E00B0E255 /* inputJSONHarderWhenEver.txt */; };
+		2D8CA03F15B55A9700B0E255 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA03E15B55A9700B0E255 /* MainViewController.m */; };
 		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
 		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
 		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
@@ -64,24 +64,24 @@
 		15DF8FF015B2C15F00F1463D /* NJDXDALParserProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParserProtocol.h; sourceTree = "<group>"; };
 		15DF8FF115B2C15F00F1463D /* NJDXDALParserXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParserXML.h; sourceTree = "<group>"; };
 		15DF8FF215B2C15F00F1463D /* NJDXDALParserXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParserXML.m; sourceTree = "<group>"; };
-		2D8C9FC515B555B300B0E255 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		2D8C9FC615B555B300B0E255 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
-		2D8C9FCA15B555E300B0E255 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		2D8C9FCB15B555E300B0E255 /* NJDXDALArticleMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALArticleMappingTest.h; sourceTree = "<group>"; };
-		2D8C9FCC15B555E300B0E255 /* NJDXDALArticleMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALArticleMappingTest.m; sourceTree = "<group>"; };
-		2D8C9FCD15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALBookStoreHardMappingTest.h; sourceTree = "<group>"; };
-		2D8C9FCE15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALBookStoreHardMappingTest.m; sourceTree = "<group>"; };
-		2D8C9FCF15B555E300B0E255 /* NJDXDALTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NJDXDALTests-Info.plist"; sourceTree = "<group>"; };
-		2D8C9FD015B555E300B0E255 /* NJDXDALTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALTests.h; sourceTree = "<group>"; };
-		2D8C9FD115B555E300B0E255 /* NJDXDALTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALTests.m; sourceTree = "<group>"; };
-		2D8C9FD315B555E300B0E255 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
-		2D8C9FD415B555E300B0E255 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
-		2D8C9FD515B555E300B0E255 /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
-		2D8C9FD615B555E300B0E255 /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
-		2D8C9FD715B555E300B0E255 /* Meta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meta.h; sourceTree = "<group>"; };
-		2D8C9FD815B555E300B0E255 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
-		2D8C9FDA15B555E300B0E255 /* inputJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSON.txt; sourceTree = "<group>"; };
-		2D8C9FDB15B555E300B0E255 /* inputJSONHarderWhenEver.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSONHarderWhenEver.txt; sourceTree = "<group>"; };
+		2D8CA02115B55A8E00B0E255 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2D8CA02215B55A8E00B0E255 /* NJDXDALArticleMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALArticleMappingTest.h; sourceTree = "<group>"; };
+		2D8CA02315B55A8E00B0E255 /* NJDXDALArticleMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALArticleMappingTest.m; sourceTree = "<group>"; };
+		2D8CA02415B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALBookStoreHardMappingTest.h; sourceTree = "<group>"; };
+		2D8CA02515B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALBookStoreHardMappingTest.m; sourceTree = "<group>"; };
+		2D8CA02615B55A8E00B0E255 /* NJDXDALTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NJDXDALTests-Info.plist"; sourceTree = "<group>"; };
+		2D8CA02715B55A8E00B0E255 /* NJDXDALTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALTests.h; sourceTree = "<group>"; };
+		2D8CA02815B55A8E00B0E255 /* NJDXDALTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALTests.m; sourceTree = "<group>"; };
+		2D8CA02A15B55A8E00B0E255 /* Article.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Article.h; sourceTree = "<group>"; };
+		2D8CA02B15B55A8E00B0E255 /* Article.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Article.m; sourceTree = "<group>"; };
+		2D8CA02C15B55A8E00B0E255 /* BookStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookStore.h; sourceTree = "<group>"; };
+		2D8CA02D15B55A8E00B0E255 /* BookStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookStore.m; sourceTree = "<group>"; };
+		2D8CA02E15B55A8E00B0E255 /* Meta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Meta.h; sourceTree = "<group>"; };
+		2D8CA02F15B55A8E00B0E255 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
+		2D8CA03115B55A8E00B0E255 /* inputJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSON.txt; sourceTree = "<group>"; };
+		2D8CA03215B55A8E00B0E255 /* inputJSONHarderWhenEver.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSONHarderWhenEver.txt; sourceTree = "<group>"; };
+		2D8CA03D15B55A9700B0E255 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		2D8CA03E15B55A9700B0E255 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilder.h; sourceTree = "<group>"; };
 		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
 		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
@@ -147,41 +147,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2D8C9FC815B555E300B0E255 /* NJDXDALTests */ = {
+		2D8CA01F15B55A8E00B0E255 /* NJDXDALTests */ = {
 			isa = PBXGroup;
 			children = (
-				2D8C9FC915B555E300B0E255 /* InfoPlist.strings */,
-				2D8C9FCB15B555E300B0E255 /* NJDXDALArticleMappingTest.h */,
-				2D8C9FCC15B555E300B0E255 /* NJDXDALArticleMappingTest.m */,
-				2D8C9FCD15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.h */,
-				2D8C9FCE15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.m */,
-				2D8C9FCF15B555E300B0E255 /* NJDXDALTests-Info.plist */,
-				2D8C9FD015B555E300B0E255 /* NJDXDALTests.h */,
-				2D8C9FD115B555E300B0E255 /* NJDXDALTests.m */,
-				2D8C9FD215B555E300B0E255 /* TestClasses */,
-				2D8C9FD915B555E300B0E255 /* TestJSONS */,
+				2D8CA02015B55A8E00B0E255 /* InfoPlist.strings */,
+				2D8CA02215B55A8E00B0E255 /* NJDXDALArticleMappingTest.h */,
+				2D8CA02315B55A8E00B0E255 /* NJDXDALArticleMappingTest.m */,
+				2D8CA02415B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.h */,
+				2D8CA02515B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.m */,
+				2D8CA02615B55A8E00B0E255 /* NJDXDALTests-Info.plist */,
+				2D8CA02715B55A8E00B0E255 /* NJDXDALTests.h */,
+				2D8CA02815B55A8E00B0E255 /* NJDXDALTests.m */,
+				2D8CA02915B55A8E00B0E255 /* TestClasses */,
+				2D8CA03015B55A8E00B0E255 /* TestJSONS */,
 			);
-			path = NJDXDALTests;
+			name = NJDXDALTests;
+			path = ../NJDXDALTests;
 			sourceTree = "<group>";
 		};
-		2D8C9FD215B555E300B0E255 /* TestClasses */ = {
+		2D8CA02915B55A8E00B0E255 /* TestClasses */ = {
 			isa = PBXGroup;
 			children = (
-				2D8C9FD315B555E300B0E255 /* Article.h */,
-				2D8C9FD415B555E300B0E255 /* Article.m */,
-				2D8C9FD515B555E300B0E255 /* BookStore.h */,
-				2D8C9FD615B555E300B0E255 /* BookStore.m */,
-				2D8C9FD715B555E300B0E255 /* Meta.h */,
-				2D8C9FD815B555E300B0E255 /* Meta.m */,
+				2D8CA02A15B55A8E00B0E255 /* Article.h */,
+				2D8CA02B15B55A8E00B0E255 /* Article.m */,
+				2D8CA02C15B55A8E00B0E255 /* BookStore.h */,
+				2D8CA02D15B55A8E00B0E255 /* BookStore.m */,
+				2D8CA02E15B55A8E00B0E255 /* Meta.h */,
+				2D8CA02F15B55A8E00B0E255 /* Meta.m */,
 			);
 			path = TestClasses;
 			sourceTree = "<group>";
 		};
-		2D8C9FD915B555E300B0E255 /* TestJSONS */ = {
+		2D8CA03015B55A8E00B0E255 /* TestJSONS */ = {
 			isa = PBXGroup;
 			children = (
-				2D8C9FDA15B555E300B0E255 /* inputJSON.txt */,
-				2D8C9FDB15B555E300B0E255 /* inputJSONHarderWhenEver.txt */,
+				2D8CA03115B55A8E00B0E255 /* inputJSON.txt */,
+				2D8CA03215B55A8E00B0E255 /* inputJSONHarderWhenEver.txt */,
 			);
 			path = TestJSONS;
 			sourceTree = "<group>";
@@ -198,9 +199,9 @@
 		30E1959F15AC208B00FA0A5C = {
 			isa = PBXGroup;
 			children = (
-				2D8C9FC515B555B300B0E255 /* MainViewController.h */,
-				2D8C9FC615B555B300B0E255 /* MainViewController.m */,
-				2D8C9FC815B555E300B0E255 /* NJDXDALTests */,
+				2D8CA03D15B55A9700B0E255 /* MainViewController.h */,
+				2D8CA03E15B55A9700B0E255 /* MainViewController.m */,
+				2D8CA01F15B55A8E00B0E255 /* NJDXDALTests */,
 				D2B1003015B1922300354480 /* Mapping */,
 				D2B1001E15B1917B00354480 /* NSString+Extensions */,
 				2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */,
@@ -393,10 +394,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8C9FDC15B555E300B0E255 /* InfoPlist.strings in Resources */,
-				2D8C9FDF15B555E300B0E255 /* NJDXDALTests-Info.plist in Resources */,
-				2D8C9FE415B555E300B0E255 /* inputJSON.txt in Resources */,
-				2D8C9FE515B555E300B0E255 /* inputJSONHarderWhenEver.txt in Resources */,
+				2D8CA03315B55A8E00B0E255 /* InfoPlist.strings in Resources */,
+				2D8CA03615B55A8E00B0E255 /* NJDXDALTests-Info.plist in Resources */,
+				2D8CA03B15B55A8E00B0E255 /* inputJSON.txt in Resources */,
+				2D8CA03C15B55A8E00B0E255 /* inputJSONHarderWhenEver.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -453,7 +454,7 @@
 				15DF8FF315B2C16000F1463D /* NJDXDALParser.m in Sources */,
 				15DF8FF415B2C16000F1463D /* NJDXDALParserJSON.m in Sources */,
 				15DF8FF515B2C16000F1463D /* NJDXDALParserXML.m in Sources */,
-				2D8C9FC715B555B300B0E255 /* MainViewController.m in Sources */,
+				2D8CA03F15B55A9700B0E255 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,12 +462,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D8C9FDD15B555E300B0E255 /* NJDXDALArticleMappingTest.m in Sources */,
-				2D8C9FDE15B555E300B0E255 /* NJDXDALBookStoreHardMappingTest.m in Sources */,
-				2D8C9FE015B555E300B0E255 /* NJDXDALTests.m in Sources */,
-				2D8C9FE115B555E300B0E255 /* Article.m in Sources */,
-				2D8C9FE215B555E300B0E255 /* BookStore.m in Sources */,
-				2D8C9FE315B555E300B0E255 /* Meta.m in Sources */,
+				2D8CA03415B55A8E00B0E255 /* NJDXDALArticleMappingTest.m in Sources */,
+				2D8CA03515B55A8E00B0E255 /* NJDXDALBookStoreHardMappingTest.m in Sources */,
+				2D8CA03715B55A8E00B0E255 /* NJDXDALTests.m in Sources */,
+				2D8CA03815B55A8E00B0E255 /* Article.m in Sources */,
+				2D8CA03915B55A8E00B0E255 /* BookStore.m in Sources */,
+				2D8CA03A15B55A8E00B0E255 /* Meta.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,10 +482,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2D8C9FC915B555E300B0E255 /* InfoPlist.strings */ = {
+		2D8CA02015B55A8E00B0E255 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				2D8C9FCA15B555E300B0E255 /* en */,
+				2D8CA02115B55A8E00B0E255 /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
