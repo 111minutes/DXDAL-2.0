@@ -20,8 +20,9 @@
 		2D8CA03A15B55A8E00B0E255 /* Meta.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA02F15B55A8E00B0E255 /* Meta.m */; };
 		2D8CA03B15B55A8E00B0E255 /* inputJSON.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA03115B55A8E00B0E255 /* inputJSON.txt */; };
 		2D8CA03C15B55A8E00B0E255 /* inputJSONHarderWhenEver.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2D8CA03215B55A8E00B0E255 /* inputJSONHarderWhenEver.txt */; };
-		2D8CA03F15B55A9700B0E255 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D8CA03E15B55A9700B0E255 /* MainViewController.m */; };
 		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
+		2DFB059015B585B400748AB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB058F15B585B400748AB9 /* AppDelegate.m */; };
+		2DFB059315B585DE00748AB9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB059215B585DE00748AB9 /* MainViewController.m */; };
 		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
 		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
 		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
@@ -29,7 +30,6 @@
 		30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B215AC208B00FA0A5C /* CoreGraphics.framework */; };
 		30E195B915AC208B00FA0A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30E195B715AC208B00FA0A5C /* InfoPlist.strings */; };
 		30E195BB15AC208B00FA0A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195BA15AC208B00FA0A5C /* main.m */; };
-		30E195BF15AC208B00FA0A5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195BE15AC208B00FA0A5C /* AppDelegate.m */; };
 		30E195C715AC208B00FA0A5C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195C615AC208B00FA0A5C /* SenTestingKit.framework */; };
 		30E195C815AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
 		30E195C915AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
@@ -80,10 +80,12 @@
 		2D8CA02F15B55A8E00B0E255 /* Meta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meta.m; sourceTree = "<group>"; };
 		2D8CA03115B55A8E00B0E255 /* inputJSON.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSON.txt; sourceTree = "<group>"; };
 		2D8CA03215B55A8E00B0E255 /* inputJSONHarderWhenEver.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = inputJSONHarderWhenEver.txt; sourceTree = "<group>"; };
-		2D8CA03D15B55A9700B0E255 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
-		2D8CA03E15B55A9700B0E255 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		2D91AA7315AC8D6000E8A39D /* NJDXDALRequestBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALRequestBuilder.h; sourceTree = "<group>"; };
 		2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALRequestBuilder.m; sourceTree = "<group>"; };
+		2DFB058E15B585B400748AB9 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = ../AppDelegate.h; sourceTree = "<group>"; };
+		2DFB058F15B585B400748AB9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
+		2DFB059115B585DE00748AB9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
+		2DFB059215B585DE00748AB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
 		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
 		30DBD0D515AEB98300B85415 /* NJDXDALParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParam.m; sourceTree = "<group>"; };
 		30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperation.h; sourceTree = "<group>"; };
@@ -96,8 +98,6 @@
 		30E195B815AC208B00FA0A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		30E195BA15AC208B00FA0A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30E195BC15AC208B00FA0A5C /* NJDXDAL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NJDXDAL-Prefix.pch"; sourceTree = "<group>"; };
-		30E195BD15AC208B00FA0A5C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		30E195BE15AC208B00FA0A5C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		30E195C515AC208B00FA0A5C /* NJDXDALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJDXDALTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E195C615AC208B00FA0A5C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		30E195E015AC21F500FA0A5C /* NJDXDALHTTPOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALHTTPOperation.h; sourceTree = "<group>"; };
@@ -199,8 +199,10 @@
 		30E1959F15AC208B00FA0A5C = {
 			isa = PBXGroup;
 			children = (
-				2D8CA03D15B55A9700B0E255 /* MainViewController.h */,
-				2D8CA03E15B55A9700B0E255 /* MainViewController.m */,
+				2DFB058E15B585B400748AB9 /* AppDelegate.h */,
+				2DFB058F15B585B400748AB9 /* AppDelegate.m */,
+				2DFB059115B585DE00748AB9 /* MainViewController.h */,
+				2DFB059215B585DE00748AB9 /* MainViewController.m */,
 				2D8CA01F15B55A8E00B0E255 /* NJDXDALTests */,
 				D2B1003015B1922300354480 /* Mapping */,
 				D2B1001E15B1917B00354480 /* NSString+Extensions */,
@@ -242,8 +244,6 @@
 		30E195B415AC208B00FA0A5C /* NJDXDAL */ = {
 			isa = PBXGroup;
 			children = (
-				30E195BD15AC208B00FA0A5C /* AppDelegate.h */,
-				30E195BE15AC208B00FA0A5C /* AppDelegate.m */,
 				30E195B515AC208B00FA0A5C /* Supporting Files */,
 			);
 			path = NJDXDAL;
@@ -439,7 +439,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				30E195BB15AC208B00FA0A5C /* main.m in Sources */,
-				30E195BF15AC208B00FA0A5C /* AppDelegate.m in Sources */,
 				30E195E215AC21F500FA0A5C /* NJDXDALHTTPOperation.m in Sources */,
 				30E195E515AC23A000FA0A5C /* NJDXDALRunLoopController.m in Sources */,
 				30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */,
@@ -454,7 +453,8 @@
 				15DF8FF315B2C16000F1463D /* NJDXDALParser.m in Sources */,
 				15DF8FF415B2C16000F1463D /* NJDXDALParserJSON.m in Sources */,
 				15DF8FF515B2C16000F1463D /* NJDXDALParserXML.m in Sources */,
-				2D8CA03F15B55A9700B0E255 /* MainViewController.m in Sources */,
+				2DFB059015B585B400748AB9 /* AppDelegate.m in Sources */,
+				2DFB059315B585DE00748AB9 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
