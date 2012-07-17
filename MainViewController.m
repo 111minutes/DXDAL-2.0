@@ -21,6 +21,7 @@
     NSMutableURLRequest* _lastRequest;
     NJDXDALOperation *_operation;
 }
+
 @end
 
 @implementation MainViewController
