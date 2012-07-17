@@ -1,0 +1,13 @@
+[
+    { "title": "RestKit Object Mapping Intro",
+      "body": "This article details how to use RestKit object mapping...",
+      "author": "Blake Watters",
+      "publication_date": "7/4/2011",
+      "copies": "1"
+    },
+    { "title": "RestKit 1.0 Released",
+      "body": "RestKit 1.0 has been released to much fanfare across the galaxy...",
+      "author": "Blake Watters",
+      "publication_date": "9/4/2011",
+      "copies": "2"
+    }]
