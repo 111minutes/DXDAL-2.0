@@ -23,13 +23,13 @@
 		2D91AA7515AC8D6000E8A39D /* NJDXDALRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D91AA7415AC8D6000E8A39D /* NJDXDALRequestBuilder.m */; };
 		2DFB059015B585B400748AB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB058F15B585B400748AB9 /* AppDelegate.m */; };
 		2DFB059315B585DE00748AB9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB059215B585DE00748AB9 /* MainViewController.m */; };
+		2DFB05E615B58D2C00748AB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DFB05E515B58D2C00748AB9 /* main.m */; };
 		30DBD0D615AEB98300B85415 /* NJDXDALParam.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0D515AEB98300B85415 /* NJDXDALParam.m */; };
 		30DBD0DD15AEC3E300B85415 /* NJDXDALOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DBD0DC15AEC3E300B85415 /* NJDXDALOperation.m */; };
 		30E195AF15AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
 		30E195B115AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
 		30E195B315AC208B00FA0A5C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B215AC208B00FA0A5C /* CoreGraphics.framework */; };
 		30E195B915AC208B00FA0A5C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 30E195B715AC208B00FA0A5C /* InfoPlist.strings */; };
-		30E195BB15AC208B00FA0A5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 30E195BA15AC208B00FA0A5C /* main.m */; };
 		30E195C715AC208B00FA0A5C /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195C615AC208B00FA0A5C /* SenTestingKit.framework */; };
 		30E195C815AC208B00FA0A5C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195AE15AC208B00FA0A5C /* UIKit.framework */; };
 		30E195C915AC208B00FA0A5C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30E195B015AC208B00FA0A5C /* Foundation.framework */; };
@@ -86,6 +86,7 @@
 		2DFB058F15B585B400748AB9 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = ../AppDelegate.m; sourceTree = "<group>"; };
 		2DFB059115B585DE00748AB9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = ../MainViewController.h; sourceTree = "<group>"; };
 		2DFB059215B585DE00748AB9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = ../MainViewController.m; sourceTree = "<group>"; };
+		2DFB05E515B58D2C00748AB9 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
 		30DBD0D415AEB98300B85415 /* NJDXDALParam.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALParam.h; sourceTree = "<group>"; };
 		30DBD0D515AEB98300B85415 /* NJDXDALParam.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJDXDALParam.m; sourceTree = "<group>"; };
 		30DBD0DB15AEC3E300B85415 /* NJDXDALOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJDXDALOperation.h; sourceTree = "<group>"; };
@@ -96,7 +97,6 @@
 		30E195B215AC208B00FA0A5C /* CoreGraphics.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		30E195B615AC208B00FA0A5C /* NJDXDAL-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "NJDXDAL-Info.plist"; sourceTree = "<group>"; };
 		30E195B815AC208B00FA0A5C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		30E195BA15AC208B00FA0A5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		30E195BC15AC208B00FA0A5C /* NJDXDAL-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NJDXDAL-Prefix.pch"; sourceTree = "<group>"; };
 		30E195C515AC208B00FA0A5C /* NJDXDALTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NJDXDALTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		30E195C615AC208B00FA0A5C /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -203,6 +203,7 @@
 				2DFB058F15B585B400748AB9 /* AppDelegate.m */,
 				2DFB059115B585DE00748AB9 /* MainViewController.h */,
 				2DFB059215B585DE00748AB9 /* MainViewController.m */,
+				2DFB05E515B58D2C00748AB9 /* main.m */,
 				2D8CA01F15B55A8E00B0E255 /* NJDXDALTests */,
 				D2B1003015B1922300354480 /* Mapping */,
 				D2B1001E15B1917B00354480 /* NSString+Extensions */,
@@ -254,7 +255,6 @@
 			children = (
 				30E195B615AC208B00FA0A5C /* NJDXDAL-Info.plist */,
 				30E195B715AC208B00FA0A5C /* InfoPlist.strings */,
-				30E195BA15AC208B00FA0A5C /* main.m */,
 				30E195BC15AC208B00FA0A5C /* NJDXDAL-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -438,7 +438,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				30E195BB15AC208B00FA0A5C /* main.m in Sources */,
 				30E195E215AC21F500FA0A5C /* NJDXDALHTTPOperation.m in Sources */,
 				30E195E515AC23A000FA0A5C /* NJDXDALRunLoopController.m in Sources */,
 				30E195EB15AC267400FA0A5C /* NJDXDALParsingOperation.m in Sources */,
@@ -455,6 +454,7 @@
 				15DF8FF515B2C16000F1463D /* NJDXDALParserXML.m in Sources */,
 				2DFB059015B585B400748AB9 /* AppDelegate.m in Sources */,
 				2DFB059315B585DE00748AB9 /* MainViewController.m in Sources */,
+				2DFB05E615B58D2C00748AB9 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
