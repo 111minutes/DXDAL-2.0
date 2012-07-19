@@ -89,7 +89,7 @@
         // start loading
         NSLog(@"Connecting...");
         _isExecuting = YES;
-        _receivedData = [NSMutableData data];
+        _receivedData = [NSMutableData new];
         [_connection performSelector:@selector(start) onThread:_thread withObject:nil waitUntilDone:NO];
     }
     else {
@@ -113,7 +113,7 @@
     assert(key != nil);
     assert(aValue != nil);
     if (!_params) {
-        _params = [NSMutableArray array];
+        _params = [[NSMutableArray alloc] init];
     }    
     [_params addObject: [[NJDXDALParam alloc] initWithKey:key value:aValue]];
 }
@@ -145,7 +145,7 @@
     // send to delegate that we've finished
     _isExecuting = NO;
     [delegate loadingFinished:self];
-//    NSLog(@"\n\n%@\n\n",[[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding]);
+    NSLog(@"\n\n%@\n\n",[[NSString alloc] initWithData:_receivedData encoding:NSUTF8StringEncoding]);
 }
 
 #pragma mark -
