@@ -34,7 +34,7 @@
 @property (nonatomic, strong) NSString *contentType;
 @property (nonatomic, copy) NSString *httpMethod;
 @property (nonatomic, copy) NSString *httpPath;
-@property (nonatomic, assign)Class entityClass;
+@property (nonatomic, assign) Class entityClass;
 
 @property (nonatomic, strong) NJDXDALMappingController *mapper;
 
@@ -47,5 +47,6 @@
 - (void)start;
 - (void)cancel;
 - (void)addParam:(NSString *)key value:(NSString *)aValue;
+- (void)addFile:(NSData *)anUploadingFile withName:(NSString *)aName;
 
 @end

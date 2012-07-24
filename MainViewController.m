@@ -78,7 +78,7 @@
 
     _operation = [requestBuilder operationWithUrl:@"https://api.foursquare.com" configurationBlock:configBlock contentType:@"json"];
     [_operation start];*/
-    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
+/*    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
     NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation) {
         operation.httpMethod = @"POST";
         
@@ -86,6 +86,18 @@
         [operation addParam:@"email" value:@"pirogsergik@rambler.ru"];
     };
     NJDXDALOperation *loginOperation = [requestBuilder operationWithUrl:@"http://kc.9bitinteractive.com/mobile/users/login" configurationBlock:configBlock contentType:@"JSON"];
+    [loginOperation start];*/
+    NJDXDALRequestBuilder *requestBuilder = [NJDXDALRequestBuilder new];
+    NJDXDALOperationConfigurationBlock configBlock = ^(NJDXDALHTTPOperation *operation) {
+        operation.httpMethod = @"FILES";
+        
+        [operation addParam:@"user_id" value:@"20"];
+        [operation addParam:@"key" value:@"a1c5bf2ec654779202b327444feb69d1"];       
+        [operation addParam:@"email" value:@"pirogsergik@rambler.ru"];
+        
+        [operation addFile:UIImageJPEGRepresentation([UIImage imageNamed:@"pic.jpg"] , 90) withName:@"pic.jpg"];
+    };
+    NJDXDALOperation *loginOperation = [requestBuilder operationWithUrl:@"http://0.0.0.0:3000/index/upload" configurationBlock:configBlock contentType:@"JSON"];
     [loginOperation start];
 }
 

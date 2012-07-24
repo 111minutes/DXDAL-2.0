@@ -20,5 +20,7 @@
 
 - (NJDXDALParam*)initWithKey:(NSString*)aKey value:(NSString*)aValue;
 - (NSString*)toString;
+- (NSString*)myKey;
+- (NSString*)myValue;
 
 @end

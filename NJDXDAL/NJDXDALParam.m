@@ -25,4 +25,14 @@
     return [NSString stringWithFormat:@"%@=%@",_key,_value];
 }
 
+- (NSString*)myKey
+{
+    return _key;
+}
+
+- (NSString*)myValue
+{
+    return _value;
+}
+
 @end

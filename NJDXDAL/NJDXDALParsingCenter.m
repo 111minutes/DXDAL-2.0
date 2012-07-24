@@ -46,7 +46,9 @@
 - (void)didFinishParsing:(NJDXDALParsingOperation*)parsOp
 {
     parsOp.parentURLOperation.isFinished = YES;
-    parsOp.parentURLOperation.completionBlock();
+    if (parsOp.parentURLOperation.completionBlock) {
+        parsOp.parentURLOperation.completionBlock();
+    }
     NSLog(@"ParsingСenter message: parsing/mapping operation's finished");
 }
 

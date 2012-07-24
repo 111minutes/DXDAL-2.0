@@ -15,6 +15,8 @@
     NSMutableData *_receivedData;
     NSThread* _thread;
     NSMutableArray* _params;
+    NSData *_uploadingFile;
+    NSString *_uploadingFileName;
 }
 @end
 
@@ -26,7 +28,6 @@
 @synthesize httpPath = _httpPath, httpMethod = _httpMethod, entityClass = _entityClass;
 @synthesize contentType = _contentType;
 @synthesize mapper = _mapper;
-
 
 - (NJDXDALHTTPOperation*)initWithURL:(NSString *)url delegate:(id<NJDXDALHTTPOperationDelegate>)aDelegate thread:(NSThread *)aThread contentType:(NSString *)aContentType
 {
@@ -58,6 +59,7 @@
     if (_httpPath) {
         _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,_httpPath]];
     }
+    
     //adding params
     NSMutableString* paramString = [NSMutableString stringWithFormat:@""];
     if ([_request.HTTPMethod isEqualToString:@"POST"] || [_request.HTTPMethod isEqualToString:@"PUT"]) {            
@@ -84,6 +86,11 @@
         absoluteString = _request.URL.absoluteString;
         _request.URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@%@",absoluteString,paramString]];
     }
+    else if([_request.HTTPMethod isEqualToString:@"FILES"]) {
+        assert(_uploadingFile);
+        assert(_uploadingFileName);
+        [self uploadFile:_uploadingFile withName:_uploadingFileName withParams:_params];
+    }
     _connection = [[NSURLConnection alloc] initWithRequest:_request delegate:self startImmediately:NO];
     if (_connection) {
         // start loading
@@ -98,6 +105,54 @@
         _isFinished = YES;
     }
 }
+
+-(void)uploadFile:(NSData *)file withName:(NSString *)name withParams:(NSArray *)params
+{
+//	NSString *urlString = url;
+    
+	NSMutableURLRequest *request = _request;
+//	[request setURL:[NSURL URLWithString:urlString]];
+	[request setHTTPMethod:@"POST"];
+    
+	NSString *boundary = [NSString stringWithString:@"------------0xKhTmLbOuNdArY"];
+	NSString *contentType = [NSString stringWithFormat:@"multipart/form-data; boundary=%@",boundary];
+	[request addValue:contentType forHTTPHeaderField: @"Content-Type"];
+    
+	NSMutableData *body = [NSMutableData data];
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"file\"; filename=\"%@\"\n",name] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    
+	[body appendData:[[NSString stringWithString:@"Content-Type: application/octet-stream\r\n\r\n"] dataUsingEncoding:NSUTF8StringEncoding]];
+	[body appendData:[NSData dataWithData:file]];
+    
+    if(params)
+    {
+        id myKey;
+        id myValue;
+        
+        for(int i=0; i<[params count]; i++)
+        {
+            myKey = [[params objectAtIndex:i] myKey];
+            myValue = [[params objectAtIndex:i] myValue];
+            
+            [body appendData:[[NSString stringWithFormat:@"\r\n--%@\r\n", boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:[[NSString stringWithFormat:@"Content-Disposition: form-data; name=\"%@\"\r\n\r\n",myKey] dataUsingEncoding:NSUTF8StringEncoding]];
+            [body appendData:[myValue dataUsingEncoding:NSUTF8StringEncoding]];
+        }
+    }
+    
+	[body appendData:[[NSString stringWithFormat:@"\r\n--%@--\r\n",boundary] dataUsingEncoding:NSUTF8StringEncoding]];
+    
+	[request setHTTPBody:body]; 
+    
+    
+	NSData *returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error:nil];
+	NSString *returnString = [[NSString alloc] initWithData:returnData encoding:NSUTF8StringEncoding];
+    
+	NSLog(@"%@",returnString);
+}
+
 
 - (void)cancel
 {
@@ -118,6 +173,11 @@
     [_params addObject: [[NJDXDALParam alloc] initWithKey:key value:aValue]];
 }
 
+- (void)addFile:(NSData *)anUploadingFile withName:(NSString *)aName
+{
+    _uploadingFile = anUploadingFile;
+    _uploadingFileName = aName;
+}
 
 // ------- NSURLConnectionDelegate -------
 
